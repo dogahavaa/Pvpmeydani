@@ -1,0 +1,70 @@
+﻿*,h1,h2,h3,h4,h5,h6{
+    margin:0; padding:0;
+}
+body {
+    font-family: Tahoma;
+    background-image: url('../Images/login-background.jpg');
+    background-color: rgba(0,0,0,0.5);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #eeeeee;
+}
+.tasiyici {
+    width: 400px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    border: 1px solid black;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 3px;
+}
+.baslik{
+    margin-left:120px;
+    padding-top:20px;
+    font-size:16pt;
+    font-weight:500;
+}
+.form{
+    padding:35px 60px;
+}
+.buyukSatir {
+    padding: 10px 5px;
+    margin-left: 10px;
+}
+.kucukSatir {
+    padding: 5px 5px;
+    margin-left: 10px;
+}
+.cizgi {
+    border-top: 2px solid rgba(0,0,0,0.5);
+    width: 92%;
+    margin-top:10px;
+}
+.textBoxStyle {
+    width: 220px;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: #121212;
+    color: #eeeeee;
+}
+.girisButon {
+    text-decoration: none;
+    padding: 10px 50px;
+    color: #eeeeee;
+    background-image: url('../Images/black_background-200x40.png');
+    border-radius: 5px;
+}
+.girisButon:hover{
+    text-decoration:underline;
+}
+.mesajPanel {
+    width: 164px;
+    height: 20px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.mesaj{
+    padding-top:20px;
+}

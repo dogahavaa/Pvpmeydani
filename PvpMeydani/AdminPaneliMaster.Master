@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminPaneliMaster.master.cs" Inherits="PvpMeydani.AdminPaneliMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="AdminPaneli/CSS/AdminPaneliCSS.css" rel="stylesheet" />
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="solMenu">
+                <div class="resimDiv">
+                    <img src="Images/metin2-logo.png" class="logo" />
+                </div>
+                <div class="profil">
+                    <div class="cizgi"></div>
+                    <div>
+                        <asp:Image ID="img_profilFotografi" runat="server" CssClass="fotograf" ImageUrl="~/AdminPaneli/Images/none.png" />
+                    </div>
+                    <div class="kullaniciadi">
+                        <asp:Label ID="lbl_kullaniciAdi" runat="server" CssClass="kullaniciAdi">Kullanıcı Adı</asp:Label>
+                        <asp:Label ID="lbl_yetki" runat="server" CssClass="kullaniciAdi">Admin</asp:Label>
+                    </div>
+                    <div style="clear:both"></div>
+                    <div class="cizgi" style="margin-bottom:25px;"></div>
+                </div>
+                <div class="items">
+                    <a href="#">
+                        <div class="satir">
+                        <img src="Images/Icons/home.png" class="iconn" />
+                        Anasayfa
+                    </div>
+                    </a>
+                    <a href="#">
+                        <div class="satir">
+                        <img src="Images/Icons/topic.png" class="iconn"/>
+                        Konu İşlemleri
+                    </div>
+                    </a>
+                    <a href="#">
+                        <div class="satir">
+                        <img src="Images/Icons/chat.png" class="iconn"/>
+                        Yorumlar
+                    </div>
+                    </a>
+                    <a href="#">
+                        <div class="satir">
+                        <img src="Images/Icons/group-chat.png" class="iconn"/>
+                        Üyeler
+                    </div>
+                    </a>
+                    <a href="#">
+                        <div class="satir">
+                        <img src="Images/Icons/tags.png" class="iconn" />
+                        Etiketler
+                    </div>
+                    </a>
+                    <a href="#">
+                        <div class="satir">
+                        <img src="Images/Icons/menu.png" class="iconn"/>
+                        Kategoriler
+                    </div>
+                    </a>
+                    <a href="#">
+                        <div class="satir">
+                        <img src="Images/Icons/user.png" class="iconn"/>
+                        Yönetici İşlemleri
+                    </div>
+                    </a>
+                    <a href="#">
+                        <div class="satir">
+                        <img src="Images/Icons/logout.png" class="iconn"/>
+                        Güvenli Çıkış
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="ustMenu"></div>
+            <div style="clear: both"></div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

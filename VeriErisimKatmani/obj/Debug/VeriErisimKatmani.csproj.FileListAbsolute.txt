@@ -1,0 +1,6 @@
+C:\Users\doga\Desktop\C#\PvpMeydani\VeriErisimKatmani\bin\Debug\VeriErisimKatmani.dll
+C:\Users\doga\Desktop\C#\PvpMeydani\VeriErisimKatmani\bin\Debug\VeriErisimKatmani.pdb
+C:\Users\doga\Desktop\C#\PvpMeydani\VeriErisimKatmani\obj\Debug\VeriErisimKatmani.csproj.AssemblyReference.cache
+C:\Users\doga\Desktop\C#\PvpMeydani\VeriErisimKatmani\obj\Debug\VeriErisimKatmani.csproj.CoreCompileInputs.cache
+C:\Users\doga\Desktop\C#\PvpMeydani\VeriErisimKatmani\obj\Debug\VeriErisimKatmani.dll
+C:\Users\doga\Desktop\C#\PvpMeydani\VeriErisimKatmani\obj\Debug\VeriErisimKatmani.pdb
