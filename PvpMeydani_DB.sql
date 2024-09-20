@@ -63,7 +63,7 @@ CREATE TABLE Konular
 	ServerDurumu bit,
 	VipKonu bit,
 	EklenmeTarihi Datetime,
-	GüncellenmeTarihi Datetime,
+	GuncellenmeTarihi Datetime,
 	GoruntulemeSayisi int,
 	BegeniSayisi int,
 	YorumSayisi int,
@@ -90,7 +90,7 @@ CREATE TABLE Yoneticiler
 	CONSTRAINT fk_yoneticiler_gorevler FOREIGN KEY(GorevID) REFERENCES Gorevler(ID),
 )
 GO
-INSERT INTO Yoneticiler(GorevID, Ad, Soyad, KullaniciAdi, Mail, Sifre, Durum, Silinmis) VALUES (1, 'Doða', 'Hava', 'KullaniciAdi', 'dogahava@gmail.com', '1234', 1, 0)
+INSERT INTO Yoneticiler(GorevID, Ad, Soyad, KullaniciAdi, Mail, Sifre, Durum, Silinmis) VALUES (1, 'Doða', 'Hava', 'dogahava', 'dogahava@gmail.com', '1234', 1, 0)
 GO
 CREATE TABLE Yorumlar
 (
