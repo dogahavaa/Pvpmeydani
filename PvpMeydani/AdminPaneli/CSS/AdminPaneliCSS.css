@@ -3,17 +3,33 @@
     padding: 0;
 }
 body {
-    font-family: Tahoma;
+    font-family: Poppins;
     background-color:#ffe8d7;
 }
 .solMenu {
-    width: 200px;
+    width: 210px;
     height: 950px;
     background-color: #211C19;
     float:left;
 }
-.ustMenu{
+.ustMenu {
+    float: left;
+    height: 50px;
+    background: #fef3ea;
+    width: 1693px;
+    border-bottom:1px solid #F56D21;
+}
+    .ustMenu h2 {
+        color: #1C3036;
+        padding:10px 50px;
+        float:left;
+    }
+.ustMenuBilgi {
+    color: #1C3036;
+    padding:8px 30px;
     float:left;
+    font-size:18pt;
+    font-weight:500;
 }
 .logo {
     width: 150px;
@@ -50,13 +66,16 @@ a {
 .cizgi{
     border-bottom: 1px solid black;
 }
-.fotograf{
-    float:left;
-    width:60px;
-    padding:10px;
+.fotograf {
+    float: left;
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+    border-radius: 50%;
+    border: 1px solid #F56D21;
 }
 .kullaniciAdi {
     float: left;
-    margin-top: 12px;
+    margin-top: 5px;
     color: #eeeeee;
 }

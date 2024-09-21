@@ -71,6 +71,10 @@
     <Content Include="AdminPaneli\AdminPaneliDefault.aspx" />
     <Content Include="AdminPaneli\CSS\AdminGirisCSS.css" />
     <Content Include="AdminPaneli\CSS\AdminPaneliCSS.css" />
+    <Content Include="AdminPaneli\CSS\EtiketlerCSS.css" />
+    <Content Include="AdminPaneli\CSS\FormCSS.css" />
+    <Content Include="AdminPaneli\CSS\ListelemeCSS.css" />
+    <Content Include="AdminPaneli\Etiketler.aspx" />
     <Content Include="AdminPaneli\Images\black_background-200x40.png" />
     <Content Include="AdminPaneli\Images\black_background-400x400.png" />
     <Content Include="AdminPaneli\Images\Icons\chat.png" />
@@ -84,6 +88,8 @@
     <Content Include="AdminPaneli\Images\login-background.jpg" />
     <Content Include="AdminPaneli\Images\metin2-logo.png" />
     <Content Include="AdminPaneli\Images\none.png" />
+    <Content Include="AdminPaneli\Images\dogahavaPF.jpeg" />
+    <Content Include="AdminPaneli\Images\dogahavapff.jpeg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -107,6 +113,13 @@
     </Compile>
     <Compile Include="AdminPaneli\AdminPaneliDefault.aspx.designer.cs">
       <DependentUpon>AdminPaneliDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPaneli\Etiketler.aspx.cs">
+      <DependentUpon>Etiketler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPaneli\Etiketler.aspx.designer.cs">
+      <DependentUpon>Etiketler.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

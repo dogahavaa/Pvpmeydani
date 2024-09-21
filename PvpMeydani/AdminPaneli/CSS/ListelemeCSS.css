@@ -1,0 +1,45 @@
+﻿*, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Poppins;
+    background-color: #ffe8d7;
+}
+.tablo{
+    width:98%;
+    padding-left:15px;
+}
+.tablo tr th {
+    border: 1px solid silver;
+    padding:3px 10px;
+    text-align:left;
+}
+    .tablo tr td {
+        border-left: 1px solid silver;
+        border-right: 1px solid silver;
+        border-bottom: 1px solid silver;
+        padding: 3px 10px;
+        text-align: left;
+    }
+.tabloBaslik {
+    text-align: center;
+    font-size: 18pt;
+    font-weight: 500;
+    border: 1px solid #F56D21;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    color: #3d3d3d;
+    padding: 20px 10px;
+}
+
+.tabloIcerik {
+    border-left: 1px solid #F56D21;
+    border-right: 1px solid #F56D21;
+    border-bottom: 1px solid #F56D21;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: 20px 10px;
+    min-height:272px;
+}

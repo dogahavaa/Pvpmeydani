@@ -1,7 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminPaneliMaster.master.cs" Inherits="PvpMeydani.AdminPaneliMaster" %>
-
 <!DOCTYPE html>
-
 <html>
 <head runat="server">
     <title></title>
@@ -19,69 +17,76 @@
                 </div>
                 <div class="profil">
                     <div class="cizgi"></div>
-                    <div>
+                    <div style="float:left">
                         <asp:Image ID="img_profilFotografi" runat="server" CssClass="fotograf" ImageUrl="~/AdminPaneli/Images/none.png" />
                     </div>
-                    <div class="kullaniciadi">
-                        <asp:Label ID="lbl_kullaniciAdi" runat="server" CssClass="kullaniciAdi">Kullanıcı Adı</asp:Label>
-                        <asp:Label ID="lbl_yetki" runat="server" CssClass="kullaniciAdi">Admin</asp:Label>
+
+                    <div style="float:left; margin-left:10px;">
+                        <div style="margin-top:13px;">
+                            <asp:Label ID="lbl_kullaniciAdi" runat="server" CssClass="kullaniciAdi">Kullanıcı Adı</asp:Label>
+                        </div>
+                        <div>
+                            <asp:Label ID="lbl_yetki" runat="server" CssClass="kullaniciAdi">Admin</asp:Label>
+                        </div>
                     </div>
-                    <div style="clear:both"></div>
-                    <div class="cizgi" style="margin-bottom:25px;"></div>
+                    <div style="clear: both"></div>
+                    <div class="cizgi" style="margin-bottom: 25px;"></div>
                 </div>
                 <div class="items">
-                    <a href="#">
+                    <a href="AdminPaneliDefault.aspx">
                         <div class="satir">
-                        <img src="Images/Icons/home.png" class="iconn" />
-                        Anasayfa
-                    </div>
+                            <img src="Images/Icons/home.png" class="iconn" />
+                            Anasayfa
+                        </div>
                     </a>
                     <a href="#">
                         <div class="satir">
-                        <img src="Images/Icons/topic.png" class="iconn"/>
-                        Konu İşlemleri
-                    </div>
+                            <img src="Images/Icons/topic.png" class="iconn" />
+                            Konu İşlemleri
+                        </div>
                     </a>
                     <a href="#">
                         <div class="satir">
-                        <img src="Images/Icons/chat.png" class="iconn"/>
-                        Yorumlar
-                    </div>
+                            <img src="Images/Icons/chat.png" class="iconn" />
+                            Yorumlar
+                        </div>
                     </a>
                     <a href="#">
                         <div class="satir">
-                        <img src="Images/Icons/group-chat.png" class="iconn"/>
-                        Üyeler
-                    </div>
+                            <img src="Images/Icons/group-chat.png" class="iconn" />
+                            Üyeler
+                        </div>
+                    </a>
+                    <a href="Etiketler.aspx">
+                        <div class="satir">
+                            <img src="Images/Icons/tags.png" class="iconn" />
+                            Etiketler
+                        </div>
                     </a>
                     <a href="#">
                         <div class="satir">
-                        <img src="Images/Icons/tags.png" class="iconn" />
-                        Etiketler
-                    </div>
+                            <img src="Images/Icons/menu.png" class="iconn" />
+                            Kategoriler
+                        </div>
                     </a>
                     <a href="#">
                         <div class="satir">
-                        <img src="Images/Icons/menu.png" class="iconn"/>
-                        Kategoriler
-                    </div>
+                            <img src="Images/Icons/user.png" class="iconn" />
+                            Yönetici İşlemleri
+                        </div>
                     </a>
                     <a href="#">
                         <div class="satir">
-                        <img src="Images/Icons/user.png" class="iconn"/>
-                        Yönetici İşlemleri
-                    </div>
-                    </a>
-                    <a href="#">
-                        <div class="satir">
-                        <img src="Images/Icons/logout.png" class="iconn"/>
-                        Güvenli Çıkış
-                    </div>
+                            <img src="Images/Icons/logout.png" class="iconn" />
+                            Güvenli Çıkış
+                        </div>
                     </a>
                 </div>
             </div>
-            <div class="ustMenu"></div>
-            <div style="clear: both"></div>
+            <div class="ustMenu">
+                <%--<asp:Label ID="lbl_sayfaAdi" runat="server" CssClass="ustMenuBilgi">Anasayfa</asp:Label>--%>
+                <h2>Pvp Meydanı Yönetim Sayfası</h2>
+            </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>

@@ -74,6 +74,79 @@ namespace VeriErisimKatmani
             }
         }
 
+        #region Etiket İşlemleri
 
+        public List<Zorluk> ZorlukListele()
+        {
+            List<Zorluk> zorluklar = new List<Zorluk>();
+            try
+            {
+                cmd.CommandText = "SELECT ID, Zorluk FROM Zorluklar";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Zorluk zorluk = new Zorluk();
+                    zorluk.ID = reader.GetInt32(0);
+                    zorluk.ZorlukSeviyesi = reader.GetString(1);
+                    zorluklar.Add(zorluk);
+                }
+                return zorluklar;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public List<Tur> TurListele()
+        {
+            List<Tur> turler = new List<Tur>();
+            try
+            {
+                cmd.CommandText = "SELECT ID, Tur FROM Turler";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Tur tur = new Tur();
+                    tur.ID = reader.GetInt32(0);
+                    tur.TurBilgisi = reader.GetString(1);
+                    turler.Add(tur);
+                }
+                return turler;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void TurEkle(string tur)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO Turler(Tur) VALUES(@tur)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@tur", tur);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        #endregion
     }
 }
