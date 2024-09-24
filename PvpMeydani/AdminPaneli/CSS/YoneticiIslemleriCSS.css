@@ -1,0 +1,22 @@
+﻿.kutuYonetici{
+    width:700px;
+    height:800px;
+}
+.sol{
+    float:left;
+}
+.sag{
+    float:right;
+}
+.yoneticiSatir{
+    margin:15px 170px;
+}
+.basarisizPanel{
+    text-align:center;
+    margin-top:40px;
+}
+.bilgi {
+    padding: 10px 200px;
+    border-radius: 5px;
+    background-color: #b62c13;
+}

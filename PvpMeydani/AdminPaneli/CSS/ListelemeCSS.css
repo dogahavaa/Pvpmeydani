@@ -1,27 +1,18 @@
-﻿*, h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Poppins;
-    background-color: #ffe8d7;
-}
-.tablo{
+﻿.tablo{
     width:98%;
     padding-left:15px;
 }
 .tablo tr th {
     border: 1px solid silver;
     padding:3px 10px;
-    text-align:left;
+    text-align:center;
 }
     .tablo tr td {
         border-left: 1px solid silver;
         border-right: 1px solid silver;
         border-bottom: 1px solid silver;
         padding: 3px 10px;
-        text-align: left;
+        text-align: center;
     }
 .tabloBaslik {
     text-align: center;
@@ -42,4 +33,16 @@ body {
     border-bottom-right-radius: 7px;
     padding: 20px 10px;
     min-height:272px;
+}
+.secenekResim img {
+    padding: 3px;
+    border: 1px solid silver;
+    margin-bottom: -5px;
+    width: 16px;
+    height: 16px;
+}
+tr td img{
+    padding-top:7px;
+    width:70px;
+    height:70px;
 }

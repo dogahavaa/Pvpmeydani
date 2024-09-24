@@ -72,8 +72,9 @@
     <Content Include="AdminPaneli\CSS\AdminGirisCSS.css" />
     <Content Include="AdminPaneli\CSS\AdminPaneliCSS.css" />
     <Content Include="AdminPaneli\CSS\EtiketlerCSS.css" />
-    <Content Include="AdminPaneli\CSS\FormCSS.css" />
+    <Content Include="AdminPaneli\CSS\GenelCSS.css" />
     <Content Include="AdminPaneli\CSS\ListelemeCSS.css" />
+    <Content Include="AdminPaneli\CSS\YoneticiIslemleriCSS.css" />
     <Content Include="AdminPaneli\Etiketler.aspx" />
     <Content Include="AdminPaneli\Images\black_background-200x40.png" />
     <Content Include="AdminPaneli\Images\black_background-400x400.png" />
@@ -90,6 +91,8 @@
     <Content Include="AdminPaneli\Images\none.png" />
     <Content Include="AdminPaneli\Images\dogahavaPF.jpeg" />
     <Content Include="AdminPaneli\Images\dogahavapff.jpeg" />
+    <Content Include="AdminPaneli\Images\x.png" />
+    <Content Include="AdminPaneli\YoneticiIslemleri.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +123,13 @@
     </Compile>
     <Compile Include="AdminPaneli\Etiketler.aspx.designer.cs">
       <DependentUpon>Etiketler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPaneli\YoneticiIslemleri.aspx.cs">
+      <DependentUpon>YoneticiIslemleri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPaneli\YoneticiIslemleri.aspx.designer.cs">
+      <DependentUpon>YoneticiIslemleri.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

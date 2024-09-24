@@ -1,14 +1,6 @@
-﻿*, h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    padding: 0;
-}
-body {
-    font-family: Poppins;
-    background-color:#ffe8d7;
-}
-.solMenu {
+﻿.solMenu {
     width: 210px;
-    height: 950px;
+    min-height: 1450px;
     background-color: #211C19;
     float:left;
 }
@@ -17,7 +9,10 @@ body {
     height: 50px;
     background: #fef3ea;
     width: 1693px;
-    border-bottom:1px solid #F56D21;
+    /*border-bottom:1px solid #F56D21;*/
+    -webkit-box-shadow: 0px 7px 30px -22px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 7px 30px -22px rgba(0,0,0,0.75);
+    box-shadow: 0px 7px 30px -22px rgba(0,0,0,0.75);
 }
     .ustMenu h2 {
         color: #1C3036;
@@ -56,15 +51,9 @@ body {
 .satir img{
     margin-bottom:-4px;
 }
-a {
-    text-decoration: none;
-}
 .profil {
     background-color:#27211e;
     /*background-color: #F56D21;*/
-}
-.cizgi{
-    border-bottom: 1px solid black;
 }
 .fotograf {
     float: left;

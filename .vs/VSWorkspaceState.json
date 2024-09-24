@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\PvpMeydani",
+    "\\PvpMeydani\\AdminPaneli",
+    "\\PvpMeydani\\AdminPaneli\\CSS",
+    "\\VeriErisimKatmani"
   ],
   "SelectedNode": "\\PvpMeydani.sln",
   "PreviewInSolutionExplorer": false

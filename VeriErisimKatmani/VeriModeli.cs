@@ -74,6 +74,45 @@ namespace VeriErisimKatmani
             }
         }
 
+        public bool ZatenVarKontrol(string kullaniciAdi, string mail, string tabloAdi)
+        {
+            try
+            {
+                int mailSayi = 0;
+                int kullaniciAdiSayi = 0;
+
+                cmd.CommandText = "SELECT COUNT(*) FROM @tabloAdi WHERE KullaniciAdi=@kAdi";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@tabloAdi", tabloAdi);
+                cmd.Parameters.AddWithValue("@kAdi", kullaniciAdi);
+                con.Open();
+                kullaniciAdiSayi = Convert.ToInt32(cmd.ExecuteScalar());
+                cmd.CommandText = "SELECT COUNT(*) FROM @tabloAdi WHERE Mail=@mail";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@tabloAdi", tabloAdi);
+                cmd.Parameters.AddWithValue("@mail", mail);
+                mailSayi = Convert.ToInt32(cmd.ExecuteScalar());
+
+                if (kullaniciAdiSayi > 0 || mailSayi > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return true;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        
+
         #region Etiket İşlemleri
 
         public List<Zorluk> ZorlukListele()
@@ -103,6 +142,7 @@ namespace VeriErisimKatmani
                 con.Close();
             }
         }
+
         public List<Tur> TurListele()
         {
             List<Tur> turler = new List<Tur>();
@@ -147,6 +187,180 @@ namespace VeriErisimKatmani
             }
         }
 
+        public void TurSil(int id)
+        {
+            try
+            {
+                cmd.CommandText = "DELETE FROM Turler WHERE ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void ZorlukEkle(string zorluk)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO Zorluklar(Zorluk) VALUES(@zorluk)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@zorluk", zorluk);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void ZorlukSil(int id)
+        {
+            try
+            {
+                cmd.CommandText = "DELETE FROM Zorluklar WHERE ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
         #endregion
+
+        #region Yönetici İşlemleri
+
+        public void YoneticiEkle(Yonetici y)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO Yoneticiler(GorevID, ProfilFotografi, Ad, Soyad, KullaniciAdi, Mail, Sifre, Durum, Silinmis) VALUES(@gorevid, @profilFoto, @ad, @soyad, @kullaniciAdi, @mail, @sifre, @durum, @silinmis)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@gorevid", y.GorevID);
+                cmd.Parameters.AddWithValue("@profilFoto", y.ProfilFotografi);
+                cmd.Parameters.AddWithValue("@ad", y.Ad);
+                cmd.Parameters.AddWithValue("@soyad", y.Soyad);
+                cmd.Parameters.AddWithValue("@kullaniciAdi", y.KullaniciAdi);
+                cmd.Parameters.AddWithValue("@mail", y.Mail);
+                cmd.Parameters.AddWithValue("@sifre", y.Sifre);
+                cmd.Parameters.AddWithValue("@durum", y.Durum);
+                cmd.Parameters.AddWithValue("@silinmis", y.Silinmis);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public List<Yonetici> YoneticiListele()
+        {
+            List<Yonetici> yoneticiler = new List<Yonetici>();
+            try
+            {
+                cmd.CommandText = "SELECT Y.ID, Y.ProfilFotografi , G.Gorev, Y.KullaniciAdi, Y.Durum FROM Yoneticiler AS Y JOIN Gorevler AS G ON G.ID = Y.GorevID";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Yonetici y = new Yonetici();
+                    y.ID = reader.GetInt32(0);
+                    y.ProfilFotografi = reader.GetString(1);
+                    y.Gorev = reader.GetString(2);
+                    y.KullaniciAdi = reader.GetString(3);
+                    y.Durum = reader.GetBoolean(4);
+                    yoneticiler.Add(y);
+                }
+                return yoneticiler;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void YetkiOlustur(string yetki)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO Gorevler(Gorev) VALUES(@yetki)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@yetki", yetki);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public List<Gorev> YetkiListele()
+        {
+            List<Gorev> gorevListele = new List<Gorev>();
+            try
+            {
+                cmd.CommandText = "SELECT ID, Gorev FROM Gorevler";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Gorev gorev = new Gorev();
+                    gorev.ID = reader.GetInt32(0);
+                    gorev.GorevAdi = reader.GetString(1);
+                    gorevListele.Add(gorev);
+                }
+                return gorevListele;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public bool YetkiSil(int id)
+        {
+            try
+            {
+                cmd.CommandText = "DELETE FROM Gorevler WHERE ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        #endregion
+
+
     }
 }

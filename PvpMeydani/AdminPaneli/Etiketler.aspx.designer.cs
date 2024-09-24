@@ -15,6 +15,15 @@ namespace PvpMeydani.AdminPaneli
     {
 
         /// <summary>
+        /// yetkili control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel yetkili;
+
+        /// <summary>
         /// tb_turBilgisi control.
         /// </summary>
         /// <remarks>
@@ -42,6 +51,24 @@ namespace PvpMeydani.AdminPaneli
         protected global::System.Web.UI.WebControls.ListView lv_turler;
 
         /// <summary>
+        /// tb_zorlukEkle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_zorlukEkle;
+
+        /// <summary>
+        /// lbtn_zorlukEkle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_zorlukEkle;
+
+        /// <summary>
         /// lv_zorluk control.
         /// </summary>
         /// <remarks>
@@ -49,5 +76,14 @@ namespace PvpMeydani.AdminPaneli
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView lv_zorluk;
+
+        /// <summary>
+        /// yetkisiz control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel yetkisiz;
     }
 }

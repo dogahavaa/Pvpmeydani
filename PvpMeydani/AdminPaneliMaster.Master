@@ -6,6 +6,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="AdminPaneli/CSS/AdminPaneliCSS.css" rel="stylesheet" />
+    <link href="AdminPaneli/CSS/GenelCSS.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -69,7 +70,7 @@
                             Kategoriler
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="YoneticiIslemleri.aspx">
                         <div class="satir">
                             <img src="Images/Icons/user.png" class="iconn" />
                             Yönetici İşlemleri
