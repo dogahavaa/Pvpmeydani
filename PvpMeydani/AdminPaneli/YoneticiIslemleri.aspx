@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPaneliMaster.Master" AutoEventWireup="true" CodeBehind="YoneticiIslemleri.aspx.cs" Inherits="PvpMeydani.AdminPaneli.YoneticiIslemleri" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="CSS/GenelCSS.css" rel="stylesheet" />
     <link href="CSS/ListelemeCSS.css" rel="stylesheet" />
@@ -12,7 +13,6 @@
             </div>
         </div>
     </asp:Panel>
-
     <asp:Panel ID="yetkili" runat="server" Visible="true">
         <div class="anaTasiyici">
 
@@ -20,7 +20,7 @@
                 <div class="kutuBaslik">
                     Yönetici Kayıt
                 </div>
-                <div class="kutuIcerik" style="min-height:682px;">
+                <div class="kutuIcerik" style="min-height: 682px;">
                     <div class="yoneticiSatir">
                         <label>Ad</label><br />
                         <asp:TextBox ID="tb_ad" runat="server" CssClass="tbStyle"></asp:TextBox>
@@ -49,20 +49,20 @@
                         Profil Fotoğrafı
                         <asp:FileUpload ID="fu_profilResmi" runat="server" />
                     </div>
-                    <div class="yoneticiSatir" style="margin-top:30px; text-align:center">
-                        <asp:LinkButton ID="lbtn_ekle" runat="server" CssClass="ekleButon" OnClick="lbtn_ekle_Click" Text="Kayıt"></asp:LinkButton>
+                    <div class="yoneticiSatir" style="margin-top: 30px; text-align: center">
+                        <asp:LinkButton ID="lbtn_ekle" runat="server" CssClass="ekleButon" OnClick="lbtn_ekle_Click" Text="Onayla"></asp:LinkButton>
                     </div>
                     <asp:Panel ID="pnl_basarisiz" runat="server" CssClass="basarisizPanel" Visible="false">
                         <asp:Label ID="lbl_bilgi" runat="server" CssClass="bilgi">Başarısız!</asp:Label>
                     </asp:Panel>
                 </div>
             </div>
-            
+
             <div class="kutu kutuYonetici sag">
                 <div class="kutuBaslik">
                     Yönetici Ekibi
                 </div>
-                <div class="kutuIcerik" style="min-height:682px;">
+                <div class="kutuIcerik" style="min-height: 682px;">
                     <asp:ListView ID="lv_yoneticiEkibi" runat="server" OnItemCommand="lv_yoneticiEkibi_ItemCommand">
                         <LayoutTemplate>
                             <table cellspacing="0" cellpadding="0" class="tablo">
@@ -72,6 +72,7 @@
                                     <th>Yetki</th>
                                     <th>Kullanıcı Adı</th>
                                     <th>Durum</th>
+                                    <th>Silinmiş</th>
                                     <th>Seçenekler</th>
                                 </tr>
                                 <asp:PlaceHolder ID="itemPlaceHolder" runat="server"></asp:PlaceHolder>
@@ -81,11 +82,26 @@
                         <ItemTemplate>
                             <tr>
                                 <td><%# Eval("ID") %></td>
-                                <td><img src='Images/<%# Eval("ProfilFotografi") %>' /></td>
+                                <td>
+                                    <img src='Images/YoneticiResimleri/<%# Eval("ProfilFotografi") %>' /></td>
                                 <td><%# Eval("Gorev") %></td>
                                 <td><%# Eval("KullaniciAdi") %></td>
                                 <td><%# Eval("Durum") %></td>
-                                <td>Seçenekler</td>
+                                <td><%# Eval("Silinmis") %></td>
+                                <td>
+                                    <a href='YoneticiDuzenle.aspx?yoneticiID=<%# Eval("ID") %>' class="secenekResim">
+                                        <img src="Images/Icons/editt.png" style="width:16px; height:16px;" />
+                                    </a>
+                                    <asp:LinkButton ID="lbtn_yDurumDegistir" runat="server" CssClass="secenekResim" CommandArgument='<%# Eval("ID") %>' CommandName="yDurumDegistir">
+                                        <img src="Images/Icons/refresh.png" style="width:16px; height:16px;" />
+                                    </asp:LinkButton>
+                                    <asp:LinkButton ID="lbtn_ySil" runat="server" CssClass="secenekResim" CommandArgument='<%# Eval("ID") %>' CommandName="ySil">
+                                        <img src="Images/Icons/x.png" style="width:16px; height:16px;" />
+                                    </asp:LinkButton>
+                                    <asp:LinkButton ID="lbtn_geriAl" runat="server" CssClass="secenekResim" CommandArgument='<%# Eval("ID") %>' CommandName="ySilineniGeriAl" Visible='<%# Eval("Silinmis") %>'>
+                                        <img src="Images/Icons/check.png" style="width:16px; height:16px;" />
+                                    </asp:LinkButton>
+                                </td>
                             </tr>
                         </ItemTemplate>
 
@@ -96,7 +112,7 @@
                 <div class="kutuBaslik">
                     Görev Oluştur
                 </div>
-                <div class="kutuIcerik" style="min-height:200px; width:682px; ">
+                <div class="kutuIcerik" style="min-height: 200px; width: 682px;">
                     <div class="etiketSatir" style="text-align: center">
                         <label class="etiketBaslik">Yetki</label>
                     </div>
@@ -114,12 +130,11 @@
                 <div class="kutuBaslik">
                     Görevler
                 </div>
-                <div class="kutuIcerik" style="min-height:200px; width:682px;">
+                <div class="kutuIcerik" style="min-height: 200px; width: 682px;">
                     <asp:ListView ID="lv_gorevler" runat="server" OnItemCommand="lv_gorevler_ItemCommand">
                         <LayoutTemplate>
                             <table cellspacing="0" cellpadding="0" class="tablo">
                                 <tr>
-                                    <th>ID</th>
                                     <th>Yetki</th>
                                     <th>Seçenekler</th>
                                 </tr>
@@ -128,7 +143,6 @@
                         </LayoutTemplate>
                         <ItemTemplate>
                             <tr>
-                                <td><%# Eval("ID") %></td>
                                 <td><%# Eval("GorevAdi") %></td>
                                 <td>
                                     <asp:LinkButton ID="lbtn_sil" runat="server" CssClass="secenekResim" CommandArgument='<%# Eval("ID") %>' CommandName="sil">
@@ -138,6 +152,7 @@
                             </tr>
                         </ItemTemplate>
                     </asp:ListView>
+                    <asp:Label ID="lbl_silinemez" runat="server" CssClass="silinemezText" Visible="false"></asp:Label>
                 </div>
             </div>
         </div>

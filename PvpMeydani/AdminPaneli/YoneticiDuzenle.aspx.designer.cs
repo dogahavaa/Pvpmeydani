@@ -11,7 +11,7 @@ namespace PvpMeydani.AdminPaneli
 {
 
 
-    public partial class YoneticiIslemleri
+    public partial class YoneticiDuzenle
     {
 
         /// <summary>
@@ -33,138 +33,102 @@ namespace PvpMeydani.AdminPaneli
         protected global::System.Web.UI.WebControls.Panel yetkili;
 
         /// <summary>
-        /// tb_ad control.
+        /// tbd_ad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_ad;
+        protected global::System.Web.UI.WebControls.TextBox tbd_ad;
 
         /// <summary>
-        /// tb_soyad control.
+        /// tbd_soyad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_soyad;
+        protected global::System.Web.UI.WebControls.TextBox tbd_soyad;
 
         /// <summary>
-        /// tb_kullaniciAdi control.
+        /// tbd_kAdi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_kullaniciAdi;
+        protected global::System.Web.UI.WebControls.TextBox tbd_kAdi;
 
         /// <summary>
-        /// tb_mail control.
+        /// tbd_mail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_mail;
+        protected global::System.Web.UI.WebControls.TextBox tbd_mail;
 
         /// <summary>
-        /// tb_sifre control.
+        /// tbd_sifre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_sifre;
+        protected global::System.Web.UI.WebControls.TextBox tbd_sifre;
 
         /// <summary>
-        /// ddl_yetki control.
+        /// ddld_yetki control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_yetki;
+        protected global::System.Web.UI.WebControls.DropDownList ddld_yetki;
 
         /// <summary>
-        /// fu_profilResmi control.
+        /// fud_pfoto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fu_profilResmi;
+        protected global::System.Web.UI.WebControls.FileUpload fud_pfoto;
 
         /// <summary>
-        /// lbtn_ekle control.
+        /// img_foto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtn_ekle;
+        protected global::System.Web.UI.WebControls.Image img_foto;
 
         /// <summary>
-        /// pnl_basarisiz control.
+        /// lbtn_duzenle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnl_basarisiz;
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_duzenle;
 
         /// <summary>
-        /// lbl_bilgi control.
+        /// pnl_dbasarisiz control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_bilgi;
+        protected global::System.Web.UI.WebControls.Panel pnl_dbasarisiz;
 
         /// <summary>
-        /// lv_yoneticiEkibi control.
+        /// lbl_dbilgi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lv_yoneticiEkibi;
-
-        /// <summary>
-        /// tb_yetkiAdi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_yetkiAdi;
-
-        /// <summary>
-        /// lbtn_yetkiEkle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtn_yetkiEkle;
-
-        /// <summary>
-        /// lv_gorevler control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lv_gorevler;
-
-        /// <summary>
-        /// lbl_silinemez control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_silinemez;
+        protected global::System.Web.UI.WebControls.Label lbl_dbilgi;
     }
 }

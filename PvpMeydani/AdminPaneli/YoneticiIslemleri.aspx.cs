@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -29,13 +30,46 @@ namespace PvpMeydani.AdminPaneli
             lv_gorevler.DataSource = vm.YetkiListele();
             lv_gorevler.DataBind();
 
-            ddl_yetki.DataSource = vm.YetkiListele();
-            ddl_yetki.DataBind();
+            if (!IsPostBack)
+            {
+                ddl_yetki.DataSource = vm.YetkiListele();
+                ddl_yetki.DataBind();
+            }
+           
         }
 
         protected void lv_yoneticiEkibi_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
+            int id = Convert.ToInt32(e.CommandArgument);
 
+            if (e.CommandName == "yDurumDegistir")
+            {
+                vm.YoneticiDurumDegistir(id);
+            }
+            if (e.CommandName == "ySil")
+            {
+                vm.YoneticiSil(id);
+            }
+            if (e.CommandName == "ySilineniGeriAl")
+            {
+                vm.YoneticiSilineniGeriAl(id);
+            }
+            if (e.CommandName == "yDuzenle")
+            {
+                Yonetici y = vm.YoneticiGetir(id);
+                tb_ad.Text = y.Ad;
+                tb_soyad.Text = y.Soyad;
+                tb_kullaniciAdi.Text = y.KullaniciAdi;
+                tb_mail.Text = y.Mail;
+                tb_sifre.Text = y.Sifre;
+                ddl_yetki.SelectedValue = y.GorevID.ToString();
+                if (!IsPostBack)
+                {
+                    vm.YoneticiDuzenle(y);
+                }
+            }
+            lv_yoneticiEkibi.DataSource = vm.YoneticiListele();
+            lv_yoneticiEkibi.DataBind();
         }
 
         protected void lbtn_yetkiEkle_Click(object sender, EventArgs e)
@@ -45,13 +79,34 @@ namespace PvpMeydani.AdminPaneli
                 vm.YetkiOlustur(tb_yetkiAdi.Text);
                 ddl_yetki.DataSource = vm.YetkiListele();
                 ddl_yetki.DataBind();
+                lv_gorevler.DataSource = vm.YetkiListele();
+                lv_gorevler.DataBind();
                 tb_yetkiAdi.Text = "";
             }
         }
 
         protected void lv_gorevler_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
+            int id = Convert.ToInt32(e.CommandArgument);
 
+            if (e.CommandName == "sil")
+            {
+                if (id != 4 && id != 11)
+                {
+                    vm.YetkiSil(id);
+                    ddl_yetki.DataSource = vm.YetkiListele();
+                    ddl_yetki.DataBind();
+                    lv_gorevler.DataSource = vm.YetkiListele();
+                    lv_gorevler.DataBind();
+                    lv_yoneticiEkibi.DataSource = vm.YoneticiListele();
+                    lv_yoneticiEkibi.DataBind();
+                }
+                else
+                {
+                    lbl_silinemez.Visible = true;
+                    lbl_silinemez.Text = "Bu yetki silinemez !";
+                }
+            }
         }
 
         protected void lbtn_ekle_Click(object sender, EventArgs e)
@@ -70,8 +125,32 @@ namespace PvpMeydani.AdminPaneli
                                 {
                                     if (!string.IsNullOrEmpty(tb_sifre.Text))
                                     {
+                                        pnl_basarisiz.Visible = false;
                                         Yonetici y = new Yonetici();
+                                        y.Ad = tb_ad.Text;
+                                        y.Soyad = tb_soyad.Text;
+                                        y.KullaniciAdi = tb_kullaniciAdi.Text;
+                                        y.Mail = tb_mail.Text;
+                                        y.Sifre = tb_sifre.Text;
+                                        y.GorevID = Convert.ToInt32(ddl_yetki.SelectedItem.Value);
 
+                                        if (fu_profilResmi.HasFile)
+                                        {
+                                            string isim = Guid.NewGuid().ToString();
+                                            string yol = fu_profilResmi.FileName;
+                                            FileInfo fi = new FileInfo(yol);
+                                            string uzanti = fi.Extension;
+                                            string tamisim = isim + uzanti;
+                                            fu_profilResmi.SaveAs(Server.MapPath("Images/YoneticiResimleri/" + tamisim));
+                                            y.ProfilFotografi = tamisim;
+                                        }
+                                        else
+                                        {
+                                            y.ProfilFotografi = "none.png";
+                                        }
+                                        vm.YoneticiEkle(y);
+                                        lv_yoneticiEkibi.DataSource = vm.YoneticiListele();
+                                        lv_yoneticiEkibi.DataBind();
                                     }
                                     else
                                     {
@@ -114,6 +193,11 @@ namespace PvpMeydani.AdminPaneli
                 pnl_basarisiz.Visible = true;
                 lbl_bilgi.Text = "Böyle bir yönetici zaten var.";
             }
+        }
+
+        protected void lbtn_duzenle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

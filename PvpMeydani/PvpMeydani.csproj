@@ -78,20 +78,27 @@
     <Content Include="AdminPaneli\Etiketler.aspx" />
     <Content Include="AdminPaneli\Images\black_background-200x40.png" />
     <Content Include="AdminPaneli\Images\black_background-400x400.png" />
+    <Content Include="AdminPaneli\Images\dogahavapff.jpeg" />
     <Content Include="AdminPaneli\Images\Icons\chat.png" />
+    <Content Include="AdminPaneli\Images\Icons\check.png" />
+    <Content Include="AdminPaneli\Images\Icons\editt.png" />
     <Content Include="AdminPaneli\Images\Icons\group-chat.png" />
     <Content Include="AdminPaneli\Images\Icons\home.png" />
     <Content Include="AdminPaneli\Images\Icons\logout.png" />
     <Content Include="AdminPaneli\Images\Icons\menu.png" />
+    <Content Include="AdminPaneli\Images\Icons\refresh.png" />
     <Content Include="AdminPaneli\Images\Icons\tags.png" />
     <Content Include="AdminPaneli\Images\Icons\topic.png" />
     <Content Include="AdminPaneli\Images\Icons\user.png" />
+    <Content Include="AdminPaneli\Images\Icons\x.png" />
     <Content Include="AdminPaneli\Images\login-background.jpg" />
     <Content Include="AdminPaneli\Images\metin2-logo.png" />
     <Content Include="AdminPaneli\Images\none.png" />
-    <Content Include="AdminPaneli\Images\dogahavaPF.jpeg" />
-    <Content Include="AdminPaneli\Images\dogahavapff.jpeg" />
+    <Content Include="AdminPaneli\Images\YoneticiResimleri\dogahavaPF.jpeg" />
+    <Content Include="AdminPaneli\Images\YoneticiResimleri\dogahavapff.jpeg" />
     <Content Include="AdminPaneli\Images\x.png" />
+    <Content Include="AdminPaneli\Images\YoneticiResimleri\none.png" />
+    <Content Include="AdminPaneli\YoneticiDuzenle.aspx" />
     <Content Include="AdminPaneli\YoneticiIslemleri.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -124,6 +131,13 @@
     <Compile Include="AdminPaneli\Etiketler.aspx.designer.cs">
       <DependentUpon>Etiketler.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminPaneli\YoneticiDuzenle.aspx.cs">
+      <DependentUpon>YoneticiDuzenle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPaneli\YoneticiDuzenle.aspx.designer.cs">
+      <DependentUpon>YoneticiDuzenle.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPaneli\YoneticiIslemleri.aspx.cs">
       <DependentUpon>YoneticiIslemleri.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -149,6 +163,7 @@
       <Name>VeriErisimKatmani</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

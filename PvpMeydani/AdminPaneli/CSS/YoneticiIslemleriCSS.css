@@ -1,22 +1,41 @@
-﻿.kutuYonetici{
-    width:700px;
-    height:800px;
+﻿.kutuYonetici {
+    width: 700px;
+    height: 800px;
 }
-.sol{
-    float:left;
+.sol {
+    float: left;
 }
-.sag{
-    float:right;
+.sag {
+    float: right;
 }
-.yoneticiSatir{
-    margin:15px 170px;
+.yoneticiSatir {
+    margin: 15px 170px;
 }
-.basarisizPanel{
-    text-align:center;
-    margin-top:40px;
+.basarisizPanel {
+    text-align: center;
+    margin-top: 40px;
 }
 .bilgi {
     padding: 10px 200px;
     border-radius: 5px;
     background-color: #b62c13;
 }
+.silinemezText {
+    margin:10px 20px;
+}
+.fotoSol {
+    float: left;
+    width: 200px;
+    margin-top:20px;
+}
+.fotoSag {
+    float: right;
+    width: 100px;
+    padding-left:10px;
+}
+.profilFoto{
+    width:90px;
+    height:90px;
+    margin-left:-20px;
+}
+
