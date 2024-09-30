@@ -13,6 +13,7 @@
             </div>
         </div>
     </asp:Panel>
+
     <asp:Panel ID="yetkili" runat="server" Visible="true">
         <div class="anaTasiyici">
 
@@ -63,6 +64,12 @@
                     Yönetici Ekibi
                 </div>
                 <div class="kutuIcerik" style="min-height: 682px;">
+                    <asp:DropDownList ID="ddl_filtre" runat="server" CssClass="filtre" OnSelectedIndexChanged="ddl_filtre_SelectedIndexChanged" AutoPostBack="true">
+                        <asp:ListItem Text="Hepsi" Value="1"></asp:ListItem>
+                        <asp:ListItem Text="Aktif" Value="2"></asp:ListItem>
+                        <asp:ListItem Text="Pasif" Value="3"></asp:ListItem>
+                        <asp:ListItem Text="Silinmiş" Value="4"></asp:ListItem>
+                    </asp:DropDownList>
                     <asp:ListView ID="lv_yoneticiEkibi" runat="server" OnItemCommand="lv_yoneticiEkibi_ItemCommand">
                         <LayoutTemplate>
                             <table cellspacing="0" cellpadding="0" class="tablo">
@@ -90,7 +97,7 @@
                                 <td><%# Eval("Silinmis") %></td>
                                 <td>
                                     <a href='YoneticiDuzenle.aspx?yoneticiID=<%# Eval("ID") %>' class="secenekResim">
-                                        <img src="Images/Icons/editt.png" style="width:16px; height:16px;" />
+                                        <img src="Images/Icons/editt.png" style="width: 16px; height: 16px;" />
                                     </a>
                                     <asp:LinkButton ID="lbtn_yDurumDegistir" runat="server" CssClass="secenekResim" CommandArgument='<%# Eval("ID") %>' CommandName="yDurumDegistir">
                                         <img src="Images/Icons/refresh.png" style="width:16px; height:16px;" />
@@ -104,7 +111,6 @@
                                 </td>
                             </tr>
                         </ItemTemplate>
-
                     </asp:ListView>
                 </div>
             </div>

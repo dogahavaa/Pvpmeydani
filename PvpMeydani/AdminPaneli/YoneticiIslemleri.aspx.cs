@@ -24,14 +24,18 @@ namespace PvpMeydani.AdminPaneli
                 }
             }
 
-            lv_yoneticiEkibi.DataSource = vm.YoneticiListele();
-            lv_yoneticiEkibi.DataBind();
-
             lv_gorevler.DataSource = vm.YetkiListele();
             lv_gorevler.DataBind();
 
+            lv_yoneticiEkibi.DataSource = vm.YoneticiListele();
+            lv_yoneticiEkibi.DataBind();
+
             if (!IsPostBack)
             {
+                //ddlFiltre();
+
+                //lv_yoneticiEkibi.DataSource = vm.YoneticiListele(false, true);
+                //lv_yoneticiEkibi.DataBind();
                 ddl_yetki.DataSource = vm.YetkiListele();
                 ddl_yetki.DataBind();
             }
@@ -41,21 +45,27 @@ namespace PvpMeydani.AdminPaneli
         protected void lv_yoneticiEkibi_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
             int id = Convert.ToInt32(e.CommandArgument);
-
             if (e.CommandName == "yDurumDegistir")
             {
+                ddlFiltre();
                 vm.YoneticiDurumDegistir(id);
+                ddlFiltre();
             }
             if (e.CommandName == "ySil")
             {
+                ddlFiltre();
                 vm.YoneticiSil(id);
+                ddlFiltre();
             }
             if (e.CommandName == "ySilineniGeriAl")
             {
+                ddlFiltre();
                 vm.YoneticiSilineniGeriAl(id);
+                ddlFiltre();
             }
             if (e.CommandName == "yDuzenle")
             {
+                ddlFiltre();
                 Yonetici y = vm.YoneticiGetir(id);
                 tb_ad.Text = y.Ad;
                 tb_soyad.Text = y.Soyad;
@@ -67,9 +77,8 @@ namespace PvpMeydani.AdminPaneli
                 {
                     vm.YoneticiDuzenle(y);
                 }
+                ddlFiltre();
             }
-            lv_yoneticiEkibi.DataSource = vm.YoneticiListele();
-            lv_yoneticiEkibi.DataBind();
         }
 
         protected void lbtn_yetkiEkle_Click(object sender, EventArgs e)
@@ -98,8 +107,7 @@ namespace PvpMeydani.AdminPaneli
                     ddl_yetki.DataBind();
                     lv_gorevler.DataSource = vm.YetkiListele();
                     lv_gorevler.DataBind();
-                    lv_yoneticiEkibi.DataSource = vm.YoneticiListele();
-                    lv_yoneticiEkibi.DataBind();
+                    ddlFiltre();
                 }
                 else
                 {
@@ -195,9 +203,32 @@ namespace PvpMeydani.AdminPaneli
             }
         }
 
-        protected void lbtn_duzenle_Click(object sender, EventArgs e)
+        protected void ddl_filtre_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            ddlFiltre();
+        }
+        private void ddlFiltre()
+        {
+                if (ddl_filtre.SelectedItem.Text == "Hepsi")
+                {
+                    lv_yoneticiEkibi.DataSource = vm.YoneticiListele();
+                    lv_yoneticiEkibi.DataBind();
+                }
+                else if (ddl_filtre.SelectedItem.Text == "Aktif")
+                {
+                    lv_yoneticiEkibi.DataSource = vm.YoneticiListele(true);
+                    lv_yoneticiEkibi.DataBind();
+                }
+                else if (ddl_filtre.SelectedItem.Text == "Pasif")
+                {
+                    lv_yoneticiEkibi.DataSource = vm.YoneticiListele(false);
+                    lv_yoneticiEkibi.DataBind();
+                }
+                else if (ddl_filtre.SelectedItem.Text == "Silinmiş")
+                {
+                    lv_yoneticiEkibi.DataSource = vm.YoneticiListele(false, true);
+                    lv_yoneticiEkibi.DataBind();
+               }
         }
     }
 }

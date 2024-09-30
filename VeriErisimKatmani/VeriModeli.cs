@@ -295,6 +295,71 @@ namespace VeriErisimKatmani
                 con.Close();
             }
         }
+        public List<Yonetici> YoneticiListele(bool durum)
+        {
+            List<Yonetici> yoneticiler = new List<Yonetici>();
+            try
+            {
+                cmd.CommandText = "SELECT Y.ID, Y.ProfilFotografi , G.Gorev, Y.KullaniciAdi, Y.Durum, Y.Silinmis FROM Yoneticiler AS Y JOIN Gorevler AS G ON G.ID = Y.GorevID WHERE Durum=@durum";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@durum", durum);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Yonetici y = new Yonetici();
+                    y.ID = reader.GetInt32(0);
+                    y.ProfilFotografi = reader.GetString(1);
+                    y.Gorev = reader.GetString(2);
+                    y.KullaniciAdi = reader.GetString(3);
+                    y.Durum = reader.GetBoolean(4);
+                    y.Silinmis = reader.GetBoolean(5);
+                    yoneticiler.Add(y);
+                }
+                return yoneticiler;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public List<Yonetici> YoneticiListele(bool durum, bool silinmis)
+        {
+            List<Yonetici> yoneticiler = new List<Yonetici>();
+            try
+            {
+                cmd.CommandText = "SELECT Y.ID, Y.ProfilFotografi , G.Gorev, Y.KullaniciAdi, Y.Durum, Y.Silinmis FROM Yoneticiler AS Y JOIN Gorevler AS G ON G.ID = Y.GorevID WHERE Durum=@durum AND Silinmis=@silinmis";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@durum", durum);
+                cmd.Parameters.AddWithValue("@silinmis", silinmis);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Yonetici y = new Yonetici();
+                    y.ID = reader.GetInt32(0);
+                    y.ProfilFotografi = reader.GetString(1);
+                    y.Gorev = reader.GetString(2);
+                    y.KullaniciAdi = reader.GetString(3);
+                    y.Durum = reader.GetBoolean(4);
+                    y.Silinmis = reader.GetBoolean(5);
+                    yoneticiler.Add(y);
+                }
+                return yoneticiler;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
         public void YoneticiDurumDegistir(int id)
         {
@@ -330,6 +395,11 @@ namespace VeriErisimKatmani
                     cmd.Parameters.AddWithValue("@silinmis", !silindiMi);
                     cmd.Parameters.AddWithValue("@id", id);
                     con.Open();
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "UPDATE Yoneticiler SET Durum=@durum WHERE ID=@id";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@durum", false);
+                    cmd.Parameters.AddWithValue("@id", id);
                     cmd.ExecuteNonQuery();
                 }
                 else

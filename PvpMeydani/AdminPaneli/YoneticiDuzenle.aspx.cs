@@ -71,7 +71,7 @@ namespace PvpMeydani.AdminPaneli
                                         y.ProfilFotografi = tamisim;
                                     }
                                     vm.YoneticiDuzenle(y);
-                                Response.Redirect("YoneticiIslemler.aspx");
+                                Response.Redirect("YoneticiIslemleri.aspx");
                                 }
                                 else
                                 {

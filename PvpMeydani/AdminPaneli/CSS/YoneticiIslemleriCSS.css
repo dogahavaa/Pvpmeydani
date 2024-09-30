@@ -38,4 +38,13 @@
     height:90px;
     margin-left:-20px;
 }
+.filtre {
+    margin-left: 515px;
+    margin-bottom:10px;
+    margin-top:-10px;
+    padding: 5px 10px;
+    border: 1px solid silver;
+    width: 150px;
+    border-radius: 5px;
+}
 
