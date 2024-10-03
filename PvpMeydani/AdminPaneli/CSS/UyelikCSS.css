@@ -1,0 +1,92 @@
+﻿*, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Poppins;
+    background: linear-gradient(to right, #c5443f 30%,#f9bc2a 100%,#f9bc2a 100%);
+    color: #211C19;
+}
+.mainFrame {
+    border: 1px solid silver;
+    border-radius: 10px;
+    width: 500px;
+    min-height: 620px;
+    margin: 0 auto;
+    margin-top: 100px;
+    background-color: #ffffffd4;
+    -webkit-box-shadow: 0px 9px 19px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 9px 19px -6px rgba(0,0,0,0.75);
+    box-shadow: 0px 9px 19px -6px rgba(0,0,0,0.75);
+}
+.baslik {
+    padding: 20px;
+    text-align: center;
+    font-size: 18pt;
+    font-weight: 500;
+}
+.cizgi {
+    border-bottom: 1px solid orange;
+}
+.tbStyle {
+    padding: 12px 10px;
+    border: none;
+    border-bottom: 2px solid silver;
+    width: 300px;
+    border-radius: 5px;
+    margin-left: 10px;
+    background-color: #ffffffd4;
+}
+    .tbStyle:focus {
+        border: none;
+        outline: none;
+        border-bottom: 2px solid orange;
+    }
+.satir {
+    margin: 20px;
+}
+.formFrame {
+    margin-top: 40px;
+    margin-left: 70px;
+}
+.uyeOlButon {
+    margin-left: 10px;
+    text-decoration: none;
+    padding: 7px 135px;
+    /*border: 1px solid #F56D21;*/
+    color: white;
+    border-radius: 5px;
+    width: 200px;
+    background-color: darkorange;
+}
+    .uyeOlButon:hover {
+        text-decoration: underline;
+    }
+
+    
+.panel {
+    border: 1px solid silver;
+    border-radius: 4px;
+    width: 320px;
+    padding: 10px;
+    margin-top: 10px;
+}
+    .panel a {
+        color:darkorange;
+    }
+
+.basarili {
+    background-color: #b9e8ab;
+}
+.basarisiz{
+    border:none;
+    color:#c5443f;
+}
+.satir label{
+    margin-left:15px;
+    font-size:11pt;
+    font-weight:300;
+}
+.satir label a {
+    color:darkorange;
+}

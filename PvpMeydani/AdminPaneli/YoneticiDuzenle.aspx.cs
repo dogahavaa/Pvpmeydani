@@ -28,7 +28,7 @@ namespace PvpMeydani.AdminPaneli
                     tbd_mail.Text = y.Mail;
                     tbd_sifre.Text = y.Sifre;
                     ddld_yetki.SelectedValue = Convert.ToString(y.GorevID);
-                    img_foto.ImageUrl = "Images/YoneticiResimleri/" + y.ProfilFotografi;
+                    img_foto.ImageUrl = "../Resimler/YoneticiResimleri/" + y.ProfilFotografi;
                 }
                 else
                 {
@@ -67,7 +67,7 @@ namespace PvpMeydani.AdminPaneli
                                         FileInfo fi = new FileInfo(yol);
                                         string uzanti = fi.Extension;
                                         string tamisim = isim + uzanti;
-                                        fud_pfoto.SaveAs(Server.MapPath("Images/YoneticiResimleri/" + tamisim));
+                                        fud_pfoto.SaveAs(Server.MapPath("../Resimler/YoneticiResimleri/" + tamisim));
                                         y.ProfilFotografi = tamisim;
                                     }
                                     vm.YoneticiDuzenle(y);

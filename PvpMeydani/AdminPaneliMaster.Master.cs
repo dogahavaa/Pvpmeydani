@@ -18,7 +18,7 @@ namespace PvpMeydani
             {
                 lbl_kullaniciAdi.Text = y.KullaniciAdi;
                 lbl_yetki.Text = y.Gorev;
-                img_profilFotografi.ImageUrl = "AdminPaneli/Images/" + y.ProfilFotografi;
+                img_profilFotografi.ImageUrl = "Resimler/YoneticiResimleri/" + y.ProfilFotografi;
             }
             else
             {

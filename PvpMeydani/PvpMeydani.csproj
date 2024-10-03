@@ -74,6 +74,7 @@
     <Content Include="AdminPaneli\CSS\EtiketlerCSS.css" />
     <Content Include="AdminPaneli\CSS\GenelCSS.css" />
     <Content Include="AdminPaneli\CSS\ListelemeCSS.css" />
+    <Content Include="AdminPaneli\CSS\UyelikCSS.css" />
     <Content Include="AdminPaneli\CSS\YoneticiIslemleriCSS.css" />
     <Content Include="AdminPaneli\Etiketler.aspx" />
     <Content Include="AdminPaneli\Images\black_background-200x40.png" />
@@ -94,12 +95,13 @@
     <Content Include="AdminPaneli\Images\login-background.jpg" />
     <Content Include="AdminPaneli\Images\metin2-logo.png" />
     <Content Include="AdminPaneli\Images\none.png" />
-    <Content Include="AdminPaneli\Images\YoneticiResimleri\dogahavaPF.jpeg" />
-    <Content Include="AdminPaneli\Images\YoneticiResimleri\dogahavapff.jpeg" />
     <Content Include="AdminPaneli\Images\x.png" />
-    <Content Include="AdminPaneli\Images\YoneticiResimleri\none.png" />
+    <Content Include="Default.aspx" />
+    <Content Include="Resimler\YoneticiResimleri\none.png" />
     <Content Include="AdminPaneli\YoneticiDuzenle.aspx" />
     <Content Include="AdminPaneli\YoneticiIslemleri.aspx" />
+    <Content Include="UyeGiris.aspx" />
+    <Content Include="UyeOl.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -145,10 +147,39 @@
     <Compile Include="AdminPaneli\YoneticiIslemleri.aspx.designer.cs">
       <DependentUpon>YoneticiIslemleri.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UyeGiris.aspx.cs">
+      <DependentUpon>UyeGiris.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UyeGiris.aspx.designer.cs">
+      <DependentUpon>UyeGiris.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UyeOl.aspx.cs">
+      <DependentUpon>UyeOl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UyeOl.aspx.designer.cs">
+      <DependentUpon>UyeOl.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminPaneliMaster.Master" />
+    <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -163,7 +194,9 @@
       <Name>VeriErisimKatmani</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resimler\UyeResimleri\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

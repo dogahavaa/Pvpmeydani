@@ -85,9 +85,9 @@ namespace VeriErisimKatmani
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@tabloAdi", tabloAdi);
                 cmd.Parameters.AddWithValue("@kAdi", kullaniciAdi);
-               
                 con.Open();
                 kullaniciAdiSayi = Convert.ToInt32(cmd.ExecuteScalar());
+
                 cmd.CommandText = "SELECT COUNT(*) FROM " + @tabloAdi + " WHERE Mail=@mail";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@tabloAdi", tabloAdi);
@@ -295,6 +295,7 @@ namespace VeriErisimKatmani
                 con.Close();
             }
         }
+
         public List<Yonetici> YoneticiListele(bool durum)
         {
             List<Yonetici> yoneticiler = new List<Yonetici>();
@@ -327,6 +328,7 @@ namespace VeriErisimKatmani
                 con.Close();
             }
         }
+
         public List<Yonetici> YoneticiListele(bool durum, bool silinmis)
         {
             List<Yonetici> yoneticiler = new List<Yonetici>();
@@ -601,6 +603,97 @@ namespace VeriErisimKatmani
 
         #endregion
 
+        #region Üye İşlemleri
+
+        public bool UyeKayit(Uye uye)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO Uyeler (Ad, Soyad, KullaniciAdi, Mail, Sifre, ProfilFotografi, Onayli, Donmus, Silinmis, UyelikTarihi, MesajSayisi, KonuSayisi, ReaksiyonSkoru) VALUES (@ad, @soyad, @kullaniciadi, @mail, @sifre, @profilfotografi, @onayli, @donmus, @silinmis, @uyeliktarihi, @mesajsayisi, @konusayisi, @reaksiyonskoru)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@ad", uye.Ad);
+                cmd.Parameters.AddWithValue("@soyad", uye.Soyad);
+                cmd.Parameters.AddWithValue("@kullaniciadi", uye.KullaniciAdi);
+                cmd.Parameters.AddWithValue("@mail", uye.Mail);
+                cmd.Parameters.AddWithValue("@sifre", uye.Sifre);
+                cmd.Parameters.AddWithValue("@profilfotografi", uye.ProfilFotografi);
+                cmd.Parameters.AddWithValue("@onayli", uye.Onayli);
+                cmd.Parameters.AddWithValue("@donmus", uye.Donmus);
+                cmd.Parameters.AddWithValue("@silinmis", uye.Silinmis);
+                cmd.Parameters.AddWithValue("@uyeliktarihi", uye.UyelikTarihi);
+                cmd.Parameters.AddWithValue("@mesajsayisi", 0);
+                cmd.Parameters.AddWithValue("@konusayisi", 0);
+                cmd.Parameters.AddWithValue("@reaksiyonskoru", 0);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch 
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public Uye UyeGiris(string kullaniciadi, string sifre)
+        {
+            try
+            {
+                int kullaniciAdiSayi = 0;
+                cmd.CommandText = "SELECT COUNT(*) FROM Uyeler WHERE KullaniciAdi=@kAdi";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@kAdi", kullaniciadi);
+                con.Open();
+                kullaniciAdiSayi = Convert.ToInt32(cmd.ExecuteScalar());
+                if (kullaniciAdiSayi == 1)
+                {
+                    cmd.CommandText = "SELECT ID, Ad, Soyad, KullaniciAdi, Mail, Sifre, ProfilFotografi, Onayli, Donmus, Silinmis, MesajSayisi, KonuSayisi, ReaksiyonSkoru, UyelikTarihi FROM Uyeler WHERE KullaniciAdi=@kullaniciadi AND Sifre=@sifre";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@kullaniciadi", kullaniciadi);
+                    cmd.Parameters.AddWithValue("@sifre", sifre);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    Uye uye = new Uye();
+                    while (reader.Read())
+                    {
+                        uye.ID = reader.GetInt32(0);
+                        uye.Ad = reader.GetString(1);
+                        uye.Soyad = reader.GetString(2);
+                        uye.KullaniciAdi = reader.GetString(3);
+                        uye.Mail = reader.GetString(4);
+                        uye.Sifre = reader.GetString(5);
+                        if (string.IsNullOrEmpty(reader.GetString(6)))
+                        {
+                            uye.ProfilFotografi = "none.png";
+                        }
+                        else
+                        {
+                            uye.ProfilFotografi = reader.GetString(6);
+                        }
+                        uye.Onayli = reader.GetBoolean(7);
+                        uye.Donmus = reader.GetBoolean(8);
+                        uye.Silinmis = reader.GetBoolean(9);
+                        uye.MesajSayisi = reader.GetInt32(10);
+                        uye.KonuSayisi = reader.GetInt32(11);
+                        uye.ReaksiyonSkoru = reader.GetInt32(12);
+                        uye.UyelikTarihi = reader.GetDateTime(13);
+                    }
+                    return uye;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        #endregion
 
     }
 }

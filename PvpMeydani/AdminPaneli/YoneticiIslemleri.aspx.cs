@@ -32,14 +32,9 @@ namespace PvpMeydani.AdminPaneli
 
             if (!IsPostBack)
             {
-                //ddlFiltre();
-
-                //lv_yoneticiEkibi.DataSource = vm.YoneticiListele(false, true);
-                //lv_yoneticiEkibi.DataBind();
                 ddl_yetki.DataSource = vm.YetkiListele();
                 ddl_yetki.DataBind();
             }
-           
         }
 
         protected void lv_yoneticiEkibi_ItemCommand(object sender, ListViewCommandEventArgs e)
@@ -149,7 +144,7 @@ namespace PvpMeydani.AdminPaneli
                                             FileInfo fi = new FileInfo(yol);
                                             string uzanti = fi.Extension;
                                             string tamisim = isim + uzanti;
-                                            fu_profilResmi.SaveAs(Server.MapPath("Images/YoneticiResimleri/" + tamisim));
+                                            fu_profilResmi.SaveAs(Server.MapPath("../Resimler/YoneticiResimleri/" + tamisim));
                                             y.ProfilFotografi = tamisim;
                                         }
                                         else

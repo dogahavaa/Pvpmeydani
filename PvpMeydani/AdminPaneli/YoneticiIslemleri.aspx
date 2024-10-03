@@ -90,7 +90,7 @@
                             <tr>
                                 <td><%# Eval("ID") %></td>
                                 <td>
-                                    <img src='Images/YoneticiResimleri/<%# Eval("ProfilFotografi") %>' /></td>
+                                    <img src='../Resimler/YoneticiResimleri/<%# Eval("ProfilFotografi") %>' /></td>
                                 <td><%# Eval("Gorev") %></td>
                                 <td><%# Eval("KullaniciAdi") %></td>
                                 <td><%# Eval("Durum") %></td>

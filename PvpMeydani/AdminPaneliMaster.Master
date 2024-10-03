@@ -64,12 +64,6 @@
                             Etiketler
                         </div>
                     </a>
-                    <a href="#">
-                        <div class="satir">
-                            <img src="Images/Icons/menu.png" class="iconn" />
-                            Kategoriler
-                        </div>
-                    </a>
                     <a href="YoneticiIslemleri.aspx">
                         <div class="satir">
                             <img src="Images/Icons/user.png" class="iconn" />

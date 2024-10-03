@@ -45,6 +45,7 @@
     <Compile Include="Gorev.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tur.cs" />
+    <Compile Include="Uye.cs" />
     <Compile Include="VeriModeli.cs" />
     <Compile Include="Yonetici.cs" />
     <Compile Include="Zorluk.cs" />
