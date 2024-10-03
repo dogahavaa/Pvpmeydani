@@ -52,7 +52,7 @@
                             Yorumlar
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="Uyeler.aspx">
                         <div class="satir">
                             <img src="Images/Icons/group-chat.png" class="iconn" />
                             Üyeler

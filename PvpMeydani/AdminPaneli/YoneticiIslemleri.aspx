@@ -70,6 +70,7 @@
                         <asp:ListItem Text="Pasif" Value="3"></asp:ListItem>
                         <asp:ListItem Text="Silinmiş" Value="4"></asp:ListItem>
                     </asp:DropDownList>
+
                     <asp:ListView ID="lv_yoneticiEkibi" runat="server" OnItemCommand="lv_yoneticiEkibi_ItemCommand">
                         <LayoutTemplate>
                             <table cellspacing="0" cellpadding="0" class="tablo">

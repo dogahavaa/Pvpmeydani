@@ -74,6 +74,7 @@
     <Content Include="AdminPaneli\CSS\EtiketlerCSS.css" />
     <Content Include="AdminPaneli\CSS\GenelCSS.css" />
     <Content Include="AdminPaneli\CSS\ListelemeCSS.css" />
+    <Content Include="AdminPaneli\CSS\UyelerCSS.css" />
     <Content Include="AdminPaneli\CSS\UyelikCSS.css" />
     <Content Include="AdminPaneli\CSS\YoneticiIslemleriCSS.css" />
     <Content Include="AdminPaneli\Etiketler.aspx" />
@@ -96,7 +97,9 @@
     <Content Include="AdminPaneli\Images\metin2-logo.png" />
     <Content Include="AdminPaneli\Images\none.png" />
     <Content Include="AdminPaneli\Images\x.png" />
+    <Content Include="AdminPaneli\Uyeler.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Resimler\UyeResimleri\none.png" />
     <Content Include="Resimler\YoneticiResimleri\none.png" />
     <Content Include="AdminPaneli\YoneticiDuzenle.aspx" />
     <Content Include="AdminPaneli\YoneticiIslemleri.aspx" />
@@ -132,6 +135,13 @@
     </Compile>
     <Compile Include="AdminPaneli\Etiketler.aspx.designer.cs">
       <DependentUpon>Etiketler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPaneli\Uyeler.aspx.cs">
+      <DependentUpon>Uyeler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPaneli\Uyeler.aspx.designer.cs">
+      <DependentUpon>Uyeler.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPaneli\YoneticiDuzenle.aspx.cs">
       <DependentUpon>YoneticiDuzenle.aspx</DependentUpon>
@@ -194,9 +204,7 @@
       <Name>VeriErisimKatmani</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resimler\UyeResimleri\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -693,6 +693,83 @@ namespace VeriErisimKatmani
             }
         }
 
+        public List<Uye> UyeListele()
+        {
+            List<Uye> uyeler = new List<Uye>();
+            try
+            {
+                cmd.CommandText = "SELECT ID, Ad, Soyad, KullaniciAdi, Mail, ProfilFotografi, Onayli, Donmus, MesajSayisi, KonuSayisi, ReaksiyonSkoru FROM Uyeler WHERE Silinmis=@silinmis";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@silinmis", false);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Uye uye = new Uye();
+                    uye.ID = reader.GetInt32(0);
+                    uye.Ad = reader.GetString(1);
+                    uye.Soyad = reader.GetString(2);
+                    uye.KullaniciAdi = reader.GetString(3);
+                    uye.Mail = reader.GetString(4);
+                    uye.ProfilFotografi = reader.GetString(5);
+                    uye.Onayli = reader.GetBoolean(6);
+                    uye.Donmus = reader.GetBoolean(7);
+                    uye.MesajSayisi = reader.GetInt32(8);
+                    uye.KonuSayisi = reader.GetInt32(9);
+                    uye.ReaksiyonSkoru = reader.GetInt32(10);
+                    uyeler.Add(uye);
+                }
+                return uyeler;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public List<Uye> UyeListele(bool onayli)
+        {
+            List<Uye> uyeler = new List<Uye>();
+            try
+            {
+                cmd.CommandText = "SELECT ID, Ad, Soyad, KullaniciAdi, Mail, ProfilFotografi, Onayli, Donmus, MesajSayisi, KonuSayisi, ReaksiyonSkoru FROM Uyeler WHERE Silinmis=@silinmis AND Onayli=@onayli";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@silinmis", false);
+                cmd.Parameters.AddWithValue("@onayli", onayli);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Uye uye = new Uye();
+                    uye.ID = reader.GetInt32(0);
+                    uye.Ad = reader.GetString(1);
+                    uye.Soyad = reader.GetString(2);
+                    uye.KullaniciAdi = reader.GetString(3);
+                    uye.Mail = reader.GetString(4);
+                    uye.ProfilFotografi = reader.GetString(5);
+                    uye.Onayli = reader.GetBoolean(6);
+                    uye.Donmus = reader.GetBoolean(7);
+                    uye.MesajSayisi = reader.GetInt32(8);
+                    uye.KonuSayisi = reader.GetInt32(9);
+                    uye.ReaksiyonSkoru = reader.GetInt32(10);
+                    uyeler.Add(uye);
+                }
+                return uyeler;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
         #endregion
 
     }
