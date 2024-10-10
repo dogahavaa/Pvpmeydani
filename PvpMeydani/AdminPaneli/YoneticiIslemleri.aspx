@@ -17,11 +17,11 @@
     <asp:Panel ID="yetkili" runat="server" Visible="true">
         <div class="anaTasiyici">
 
-            <div class="kutu kutuYonetici sol">
+            <div class="kutu kutuYonetici sag">
                 <div class="kutuBaslik">
                     Yönetici Kayıt
                 </div>
-                <div class="kutuIcerik" style="min-height: 682px;">
+                <div class="kutuIcerik" style="min-height: 692px;">
                     <div class="yoneticiSatir">
                         <label>Ad</label><br />
                         <asp:TextBox ID="tb_ad" runat="server" CssClass="tbStyle"></asp:TextBox>
@@ -59,11 +59,11 @@
                 </div>
             </div>
 
-            <div class="kutu kutuYonetici sag">
+            <div class="kutu kutuYonetici sol">
                 <div class="kutuBaslik">
                     Yönetici Ekibi
                 </div>
-                <div class="kutuIcerik" style="min-height: 682px;">
+                <div class="kutuIcerik" style="min-height: 692px;">
                     <asp:DropDownList ID="ddl_filtre" runat="server" CssClass="filtre" OnSelectedIndexChanged="ddl_filtre_SelectedIndexChanged" AutoPostBack="true">
                         <asp:ListItem Text="Hepsi" Value="1"></asp:ListItem>
                         <asp:ListItem Text="Aktif" Value="2"></asp:ListItem>
@@ -113,53 +113,6 @@
                             </tr>
                         </ItemTemplate>
                     </asp:ListView>
-                </div>
-            </div>
-            <div class="kutu sol" style="">
-                <div class="kutuBaslik">
-                    Görev Oluştur
-                </div>
-                <div class="kutuIcerik" style="min-height: 200px; width: 682px;">
-                    <div class="etiketSatir" style="text-align: center">
-                        <label class="etiketBaslik">Yetki</label>
-                    </div>
-                    <div class="etiketSatir" style="text-align: center; margin-bottom: 20px;">
-                        <asp:TextBox ID="tb_yetkiAdi" runat="server" CssClass="tbStyle"></asp:TextBox>
-                    </div>
-                    <div class="etiketSatir" style="text-align: center; margin-top: 30px;">
-                        <asp:LinkButton ID="lbtn_yetkiEkle" runat="server" Text="Ekle" OnClick="lbtn_yetkiEkle_Click" CssClass="ekleButon">
-
-                        </asp:LinkButton>
-                    </div>
-                </div>
-            </div>
-            <div class="kutu sag">
-                <div class="kutuBaslik">
-                    Görevler
-                </div>
-                <div class="kutuIcerik" style="min-height: 200px; width: 682px;">
-                    <asp:ListView ID="lv_gorevler" runat="server" OnItemCommand="lv_gorevler_ItemCommand">
-                        <LayoutTemplate>
-                            <table cellspacing="0" cellpadding="0" class="tablo">
-                                <tr>
-                                    <th>Yetki</th>
-                                    <th>Seçenekler</th>
-                                </tr>
-                                <asp:PlaceHolder ID="itemPlaceHolder" runat="server"></asp:PlaceHolder>
-                            </table>
-                        </LayoutTemplate>
-                        <ItemTemplate>
-                            <tr>
-                                <td><%# Eval("GorevAdi") %></td>
-                                <td>
-                                    <asp:LinkButton ID="lbtn_sil" runat="server" CssClass="secenekResim" CommandArgument='<%# Eval("ID") %>' CommandName="sil">
-                                        <img src="Images/x.png" style="width:16px; height:16px;" />
-                                    </asp:LinkButton>
-                                </td>
-                            </tr>
-                        </ItemTemplate>
-                    </asp:ListView>
-                    <asp:Label ID="lbl_silinemez" runat="server" CssClass="silinemezText" Visible="false"></asp:Label>
                 </div>
             </div>
         </div>

@@ -770,6 +770,181 @@ namespace VeriErisimKatmani
             }
         }
 
+        public void UyeOnayla(int id)
+        {
+            try
+            {
+                cmd.CommandText = "UPDATE Uyeler SET Onayli=@onay WHERE ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@onay", true);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void UyeReddet(int id)
+        {
+            try
+            {
+                cmd.CommandText = "DELETE FROM Uyeler WHERE ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            { con.Close(); }
+        }
+
+        public void UyeSil(int id)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT Silinmis FROM Uyeler WHERE ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                bool silinmis = Convert.ToBoolean(cmd.ExecuteScalar());
+
+                if (silinmis == false)
+                {
+                    cmd.CommandText = "UPDATE Uyeler SET Silinmis=@silinmis WHERE ID=@id";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@silinmis", true);
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                {
+                    cmd.CommandText = "DELETE FROM Uyeler WHERE ID=@id";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@id", id);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void UyeSilineniGeriAl(int id)
+        {
+            try
+            {
+                cmd.CommandText = "UPDATE Uyeler SET Silinmis='True' WHERE ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        #endregion
+
+        #region Yetkilendirme İşlemleri
+
+        public void IslemOlustur(Islem i)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO Yetkilendirme(Islem) VALUES(@islem)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@islem", i.IslemAciklamasi);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public List<Islem> IslemListele()
+        {
+            try
+            {
+                List<Islem> islemler = new List<Islem>();
+                cmd.CommandText = "SELECT ID, Islem FROM Yetkilendirme";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Islem i = new Islem();
+                    i.ID = reader.GetInt32(0);
+                    i.IslemAciklamasi = reader.GetString(1);
+                    islemler.Add(i);
+                }
+                return islemler;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void IslemSil(int id)
+        {
+            try
+            {
+                cmd.CommandText = "DELETE FROM Yetkilendirme WHERE ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void AraTabloDoldur()
+        {
+            try
+            {
+                List<Gorev> goreviIDleri = new List<Gorev>();
+                List<Islem> islemIDleri = new List<Islem>();
+                cmd.CommandText = "SELECT ID FROM Gorevler";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader gorevReader = cmd.ExecuteReader();
+                while (gorevReader.Read())
+                {
+                    Gorev g = new Gorev();
+                    g.ID = gorevReader.GetInt32(0);
+                    goreviIDleri.Add(g);
+                }
+                SqlDataReader islemReader = cmd.ExecuteReader();
+                while (islemReader.Read())
+                {
+                    Islem i = new Islem();
+                    i.ID = islemReader.GetInt32(0);
+                    islemIDleri.Add(i);
+                }
+                
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
         #endregion
 
     }

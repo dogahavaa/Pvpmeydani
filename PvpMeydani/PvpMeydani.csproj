@@ -74,7 +74,7 @@
     <Content Include="AdminPaneli\CSS\EtiketlerCSS.css" />
     <Content Include="AdminPaneli\CSS\GenelCSS.css" />
     <Content Include="AdminPaneli\CSS\ListelemeCSS.css" />
-    <Content Include="AdminPaneli\CSS\UyelerCSS.css" />
+    <Content Include="AdminPaneli\CSS\YetkilendirmeCSS.css" />
     <Content Include="AdminPaneli\CSS\UyelikCSS.css" />
     <Content Include="AdminPaneli\CSS\YoneticiIslemleriCSS.css" />
     <Content Include="AdminPaneli\Etiketler.aspx" />
@@ -86,6 +86,7 @@
     <Content Include="AdminPaneli\Images\Icons\editt.png" />
     <Content Include="AdminPaneli\Images\Icons\group-chat.png" />
     <Content Include="AdminPaneli\Images\Icons\home.png" />
+    <Content Include="AdminPaneli\Images\Icons\insurance.png" />
     <Content Include="AdminPaneli\Images\Icons\logout.png" />
     <Content Include="AdminPaneli\Images\Icons\menu.png" />
     <Content Include="AdminPaneli\Images\Icons\refresh.png" />
@@ -98,6 +99,8 @@
     <Content Include="AdminPaneli\Images\none.png" />
     <Content Include="AdminPaneli\Images\x.png" />
     <Content Include="AdminPaneli\Uyeler.aspx" />
+    <Content Include="AdminPaneli\Yetkilendirme.aspx" />
+    <Content Include="AdminPaneli\YetkilendirmeDuzenle.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Resimler\UyeResimleri\none.png" />
     <Content Include="Resimler\YoneticiResimleri\none.png" />
@@ -142,6 +145,20 @@
     </Compile>
     <Compile Include="AdminPaneli\Uyeler.aspx.designer.cs">
       <DependentUpon>Uyeler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPaneli\Yetkilendirme.aspx.cs">
+      <DependentUpon>Yetkilendirme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPaneli\Yetkilendirme.aspx.designer.cs">
+      <DependentUpon>Yetkilendirme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPaneli\YetkilendirmeDuzenle.aspx.cs">
+      <DependentUpon>YetkilendirmeDuzenle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPaneli\YetkilendirmeDuzenle.aspx.designer.cs">
+      <DependentUpon>YetkilendirmeDuzenle.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPaneli\YoneticiDuzenle.aspx.cs">
       <DependentUpon>YoneticiDuzenle.aspx</DependentUpon>

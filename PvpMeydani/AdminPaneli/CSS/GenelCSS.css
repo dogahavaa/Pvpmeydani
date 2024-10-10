@@ -77,3 +77,22 @@ a {
     width: 322px;
     border-radius: 5px;
 }
+.onaylaButon {
+    text-decoration: none;
+    padding: 7px 30px;
+    background-color: #e58c5a;
+    border-radius:5px;
+    color:white;
+    margin-top:30px;
+}
+.onaylaButon:hover{
+    text-decoration:underline;
+}
+/*.pnl_basarisizIslem {
+    CREATE TABLE Yetkilendirme (
+	ID INT IDENTITY,
+	Islem NVARCHAR(100),
+	Onay BIT,
+	CONSTRAINT pk_yetkilendirme PRIMARY KEY(ID),
+)
+}*/

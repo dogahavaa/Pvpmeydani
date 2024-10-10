@@ -56,7 +56,7 @@ namespace PvpMeydani
                                                                 FileInfo info = new FileInfo(yol);
                                                                 string uzanti = info.Extension;
                                                                 string tamisim = isim + uzanti;
-                                                                fu_uyeResim.SaveAs(Server.MapPath("Resimler/UyeResimleri" + tamisim));
+                                                                fu_uyeResim.SaveAs(Server.MapPath("Resimler/UyeResimleri/" + tamisim));
                                                                 uye.ProfilFotografi = tamisim;
                                                             }
                                                             else

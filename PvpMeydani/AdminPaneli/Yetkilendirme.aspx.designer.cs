@@ -7,65 +7,74 @@
 // </otomatik olarak oluşturulmuş>
 //------------------------------------------------------------------------------
 
-namespace PvpMeydani
+namespace PvpMeydani.AdminPaneli
 {
 
 
-    public partial class AdminPaneliMaster
+    public partial class Yetkilendirme
     {
 
         /// <summary>
-        /// head denetimi.
+        /// tb_yetkiAdi denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik olarak oluşturulan alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.TextBox tb_yetkiAdi;
 
         /// <summary>
-        /// form1 denetimi.
+        /// lbtn_yetkiEkle denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik olarak oluşturulan alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_yetkiEkle;
 
         /// <summary>
-        /// img_profilFotografi denetimi.
+        /// lv_gorevler denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik olarak oluşturulan alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image img_profilFotografi;
+        protected global::System.Web.UI.WebControls.ListView lv_gorevler;
 
         /// <summary>
-        /// lbl_kullaniciAdi denetimi.
+        /// lbl_silinemez denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik olarak oluşturulan alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_kullaniciAdi;
+        protected global::System.Web.UI.WebControls.Label lbl_silinemez;
 
         /// <summary>
-        /// lbl_yetki denetimi.
+        /// lv_islemler denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik olarak oluşturulan alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_yetki;
+        protected global::System.Web.UI.WebControls.ListView lv_islemler;
 
         /// <summary>
-        /// ContentPlaceHolder1 denetimi.
+        /// tb_islem denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik olarak oluşturulan alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.TextBox tb_islem;
+
+        /// <summary>
+        /// lbtn_islemolustur denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_islemolustur;
     }
 }

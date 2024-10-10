@@ -22,7 +22,7 @@
                     <asp:TextBox ID="tb_sifre" runat="server" CssClass="tbStyle" placeholder="Şifre" TextMode="Password"></asp:TextBox>
                 </div>
                 <div class="satir">
-                    <label>Henüz aramıza katılmadın mı ? <a href="#">Üye Ol</a></label>
+                    <label>Henüz aramıza katılmadın mı ? <a href="UyeOl.aspx">Üye Ol</a></label>
                 </div>
                 <div class="satir" style="margin-top:24px;">
                     <asp:LinkButton ID="lbtn_giris" runat="server" Text="Giriş Yap" CssClass="uyeOlButon" OnClick="lbtn_giris_Click"></asp:LinkButton>

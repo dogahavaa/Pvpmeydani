@@ -11,43 +11,34 @@ namespace PvpMeydani.AdminPaneli
 {
 
 
-    public partial class Uyeler
+    public partial class YetkilendirmeDuzenle
     {
 
         /// <summary>
-        /// lv_onayBekleyen denetimi.
+        /// lbl_baslik denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik olarak oluşturulan alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lv_onayBekleyen;
+        protected global::System.Web.UI.WebControls.Label lbl_baslik;
 
         /// <summary>
-        /// pnl_silmeBasarisiz denetimi.
+        /// lv_yetkilendirmeDuzenle denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik olarak oluşturulan alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnl_silmeBasarisiz;
+        protected global::System.Web.UI.WebControls.ListView lv_yetkilendirmeDuzenle;
 
         /// <summary>
-        /// lbl_yetkiHatasi denetimi.
+        /// lbtn_onayla denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik olarak oluşturulan alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_yetkiHatasi;
-
-        /// <summary>
-        /// lv_uyeler denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik olarak oluşturulan alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lv_uyeler;
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_onayla;
     }
 }

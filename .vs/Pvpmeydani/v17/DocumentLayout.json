@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\pc\\Documents\\GitHub\\Pvpmeydani\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{02273622-8632-48F4-BDFD-1B52E25BDFB7}|VeriErisimKatmani\\VeriErisimKatmani.csproj|C:\\Users\\pc\\Documents\\GitHub\\Pvpmeydani\\verierisimkatmani\\verimodeli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02273622-8632-48F4-BDFD-1B52E25BDFB7}|VeriErisimKatmani\\VeriErisimKatmani.csproj|solutionrelative:verierisimkatmani\\verimodeli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56E63F58-E38E-430B-B4E1-11D8563B48C3}|PvpMeydani\\PvpMeydani.csproj|c:\\users\\pc\\documents\\github\\pvpmeydani\\pvpmeydani\\adminpaneli\\yetkilendirme.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56E63F58-E38E-430B-B4E1-11D8563B48C3}|PvpMeydani\\PvpMeydani.csproj|solutionrelative:pvpmeydani\\adminpaneli\\yetkilendirme.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56E63F58-E38E-430B-B4E1-11D8563B48C3}|PvpMeydani\\PvpMeydani.csproj|C:\\Users\\pc\\Documents\\GitHub\\Pvpmeydani\\pvpmeydani\\adminpaneli\\yetkilendirme.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{56E63F58-E38E-430B-B4E1-11D8563B48C3}|PvpMeydani\\PvpMeydani.csproj|solutionrelative:pvpmeydani\\adminpaneli\\yetkilendirme.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56E63F58-E38E-430B-B4E1-11D8563B48C3}|PvpMeydani\\PvpMeydani.csproj|c:\\users\\pc\\documents\\github\\pvpmeydani\\pvpmeydani\\adminpaneli\\yetkilendirmeduzenle.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{56E63F58-E38E-430B-B4E1-11D8563B48C3}|PvpMeydani\\PvpMeydani.csproj|solutionrelative:pvpmeydani\\adminpaneli\\yetkilendirmeduzenle.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56E63F58-E38E-430B-B4E1-11D8563B48C3}|PvpMeydani\\PvpMeydani.csproj|c:\\users\\pc\\documents\\github\\pvpmeydani\\pvpmeydani\\adminpaneli\\css\\genelcss.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{56E63F58-E38E-430B-B4E1-11D8563B48C3}|PvpMeydani\\PvpMeydani.csproj|solutionrelative:pvpmeydani\\adminpaneli\\css\\genelcss.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56E63F58-E38E-430B-B4E1-11D8563B48C3}|PvpMeydani\\PvpMeydani.csproj|c:\\users\\pc\\documents\\github\\pvpmeydani\\pvpmeydani\\adminpaneli\\yetkilendirmeduzenle.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56E63F58-E38E-430B-B4E1-11D8563B48C3}|PvpMeydani\\PvpMeydani.csproj|solutionrelative:pvpmeydani\\adminpaneli\\yetkilendirmeduzenle.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56E63F58-E38E-430B-B4E1-11D8563B48C3}|PvpMeydani\\PvpMeydani.csproj|C:\\Users\\pc\\Documents\\GitHub\\Pvpmeydani\\pvpmeydani\\adminpaneli\\yoneticiislemleri.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{56E63F58-E38E-430B-B4E1-11D8563B48C3}|PvpMeydani\\PvpMeydani.csproj|solutionrelative:pvpmeydani\\adminpaneli\\yoneticiislemleri.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 37,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GenelCSS.css",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\Pvpmeydani\\PvpMeydani\\AdminPaneli\\CSS\\GenelCSS.css",
+              "RelativeDocumentMoniker": "PvpMeydani\\AdminPaneli\\CSS\\GenelCSS.css",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\Pvpmeydani\\PvpMeydani\\AdminPaneli\\CSS\\GenelCSS.css",
+              "RelativeToolTip": "PvpMeydani\\AdminPaneli\\CSS\\GenelCSS.css",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAAAFUAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-06T18:11:03.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "YetkilendirmeDuzenle.aspx",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\Pvpmeydani\\PvpMeydani\\AdminPaneli\\YetkilendirmeDuzenle.aspx",
+              "RelativeDocumentMoniker": "PvpMeydani\\AdminPaneli\\YetkilendirmeDuzenle.aspx",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\Pvpmeydani\\PvpMeydani\\AdminPaneli\\YetkilendirmeDuzenle.aspx",
+              "RelativeToolTip": "PvpMeydani\\AdminPaneli\\YetkilendirmeDuzenle.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-10-06T17:42:00.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "YetkilendirmeDuzenle.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\Pvpmeydani\\PvpMeydani\\AdminPaneli\\YetkilendirmeDuzenle.aspx.cs",
+              "RelativeDocumentMoniker": "PvpMeydani\\AdminPaneli\\YetkilendirmeDuzenle.aspx.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\Pvpmeydani\\PvpMeydani\\AdminPaneli\\YetkilendirmeDuzenle.aspx.cs",
+              "RelativeToolTip": "PvpMeydani\\AdminPaneli\\YetkilendirmeDuzenle.aspx.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T17:56:52.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Yetkilendirme.aspx",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\Pvpmeydani\\PvpMeydani\\AdminPaneli\\Yetkilendirme.aspx",
+              "RelativeDocumentMoniker": "PvpMeydani\\AdminPaneli\\Yetkilendirme.aspx",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\Pvpmeydani\\PvpMeydani\\AdminPaneli\\Yetkilendirme.aspx",
+              "RelativeToolTip": "PvpMeydani\\AdminPaneli\\Yetkilendirme.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-10-06T13:26:12.699Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VeriModeli.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\Pvpmeydani\\VeriErisimKatmani\\VeriModeli.cs",
+              "RelativeDocumentMoniker": "VeriErisimKatmani\\VeriModeli.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\Pvpmeydani\\VeriErisimKatmani\\VeriModeli.cs",
+              "RelativeToolTip": "VeriErisimKatmani\\VeriModeli.cs",
+              "ViewState": "AQIAAJQDAAAAAAAAAAAowKsDAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T13:02:27.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Yetkilendirme.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\Pvpmeydani\\PvpMeydani\\AdminPaneli\\Yetkilendirme.aspx.cs",
+              "RelativeDocumentMoniker": "PvpMeydani\\AdminPaneli\\Yetkilendirme.aspx.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\Pvpmeydani\\PvpMeydani\\AdminPaneli\\Yetkilendirme.aspx.cs",
+              "RelativeToolTip": "PvpMeydani\\AdminPaneli\\Yetkilendirme.aspx.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAABcAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T13:32:13.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "YoneticiIslemleri.aspx",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\Pvpmeydani\\PvpMeydani\\AdminPaneli\\YoneticiIslemleri.aspx",
+              "RelativeDocumentMoniker": "PvpMeydani\\AdminPaneli\\YoneticiIslemleri.aspx",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\Pvpmeydani\\PvpMeydani\\AdminPaneli\\YoneticiIslemleri.aspx",
+              "RelativeToolTip": "PvpMeydani\\AdminPaneli\\YoneticiIslemleri.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-10-06T12:57:41.459Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
