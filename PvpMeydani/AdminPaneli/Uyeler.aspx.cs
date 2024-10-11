@@ -15,6 +15,18 @@ namespace PvpMeydani.AdminPaneli
         protected void Page_Load(object sender, EventArgs e)
         {
             y = (Yonetici)Session["Yonetici"];
+
+            if (vm.YetkiSorgula(32, y.GorevID))
+            {
+                pnl_yetkili.Visible = true;
+                pnl_yetkisiz.Visible = false;
+            }
+            else
+            {
+                pnl_yetkili.Visible = false;
+                pnl_yetkisiz.Visible = true;
+            }
+
             lv_uyeler.DataSource = vm.UyeListele(true);
             lv_uyeler.DataBind();
 
@@ -25,19 +37,22 @@ namespace PvpMeydani.AdminPaneli
         protected void lv_uyeler_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
             int id = Convert.ToInt32(e.CommandArgument);
-            if (y.Gorev=="Admin")
+
+            if (e.CommandName == "sil")
             {
-                if (e.CommandName == "sil")
+                if (vm.YetkiSorgula(37, y.GorevID))
                 {
                     vm.UyeSil(id);
+                    lbl_uyeSilMesaj.Visible = false;
+                }
+                else
+                {
+                    lbl_uyeSilMesaj.Visible = true;
+                    lbl_uyeSilMesaj.Text = "Üye silme yetkiniz yoktur.";
                 }
             }
-            else
-            {
-                pnl_silmeBasarisiz.Visible = true;
-            }
-            
-            if (e.CommandName=="geriAl")
+
+            if (e.CommandName == "geriAl")
             {
                 vm.UyeSilineniGeriAl(id);
             }
@@ -48,14 +63,34 @@ namespace PvpMeydani.AdminPaneli
         protected void lv_onayBekleyen_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
             int id = Convert.ToInt32(e.CommandArgument);
-            if (e.CommandName=="onayla")
+            if (e.CommandName == "onayla")
             {
-                vm.UyeOnayla(id);
+                if (vm.YetkiSorgula(36, y.GorevID))
+                {
+                    vm.UyeOnayla(id);
+                    lbl_uyeOnayMesaj.Visible = false;
+                }
+                else
+                {
+                    lbl_uyeOnayMesaj.Visible = true;
+                    lbl_uyeOnayMesaj.Text = "Üye onaylama ve reddetme yetkiniz yoktur.";
+                }
+                
             }
-            if (e.CommandName=="sil")
+            if (e.CommandName == "sil")
             {
-                vm.UyeReddet(id);
+                if (vm.YetkiSorgula(36, y.GorevID))
+                {
+                    vm.UyeReddet(id);
+                    lbl_uyeOnayMesaj.Visible = false;
+                }
+                else
+                {
+                    lbl_uyeOnayMesaj.Visible = true;
+                    lbl_uyeOnayMesaj.Text = "Üye onaylama ve reddetme yetkiniz yoktur.";
+                }
             }
+
             lv_uyeler.DataSource = vm.UyeListele(true);
             lv_uyeler.DataBind();
 

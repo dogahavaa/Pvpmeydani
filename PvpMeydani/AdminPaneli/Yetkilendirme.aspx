@@ -10,7 +10,6 @@
 
     <div class="anaTasiyici">
 
-
         <div class="kutu sag">
             <div class="kutuBaslik">
                 Görev Oluştur

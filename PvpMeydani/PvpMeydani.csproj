@@ -90,6 +90,7 @@
     <Content Include="AdminPaneli\Images\Icons\logout.png" />
     <Content Include="AdminPaneli\Images\Icons\menu.png" />
     <Content Include="AdminPaneli\Images\Icons\refresh.png" />
+    <Content Include="AdminPaneli\Images\Icons\square.png" />
     <Content Include="AdminPaneli\Images\Icons\tags.png" />
     <Content Include="AdminPaneli\Images\Icons\topic.png" />
     <Content Include="AdminPaneli\Images\Icons\user.png" />

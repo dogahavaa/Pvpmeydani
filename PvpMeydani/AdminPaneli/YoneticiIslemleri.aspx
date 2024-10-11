@@ -6,22 +6,15 @@
     <link href="CSS/YoneticiIslemleriCSS.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Panel ID="yetkisiz" runat="server" Visible="false">
-        <div class="anaTasiyici">
-            <div class="yetkiMesajKutusu">
-                <label class="yetkiMesaji">Bu sayfanın işlemlerini sadece 'Admin' Yetkisindeki kişiler yapabilir.</label>
-            </div>
-        </div>
-    </asp:Panel>
 
-    <asp:Panel ID="yetkili" runat="server" Visible="true">
-        <div class="anaTasiyici">
+    <div class="anaTasiyici">
 
+        <asp:Panel ID="pnl_yetkili" runat="server" Visible="true">
             <div class="kutu kutuYonetici sag">
                 <div class="kutuBaslik">
                     Yönetici Kayıt
                 </div>
-                <div class="kutuIcerik" style="min-height: 692px;">
+                <div class="kutuIcerik" style="min-height: 682px;">
                     <div class="yoneticiSatir">
                         <label>Ad</label><br />
                         <asp:TextBox ID="tb_ad" runat="server" CssClass="tbStyle"></asp:TextBox>
@@ -63,7 +56,7 @@
                 <div class="kutuBaslik">
                     Yönetici Ekibi
                 </div>
-                <div class="kutuIcerik" style="min-height: 692px;">
+                <div class="kutuIcerik" style="min-height: 682px;">
                     <asp:DropDownList ID="ddl_filtre" runat="server" CssClass="filtre" OnSelectedIndexChanged="ddl_filtre_SelectedIndexChanged" AutoPostBack="true">
                         <asp:ListItem Text="Hepsi" Value="1"></asp:ListItem>
                         <asp:ListItem Text="Aktif" Value="2"></asp:ListItem>
@@ -115,6 +108,14 @@
                     </asp:ListView>
                 </div>
             </div>
-        </div>
-    </asp:Panel>
+        </asp:Panel>
+
+        <asp:Panel ID="pnl_yetkisiz" runat="server" Visible="true">
+            <div class="kutu yetkiMesajKutusu">
+                <label class="yetkiMesaji">Bu sayfaya erişim yetkiniz yoktur.</label>
+            </div>
+        </asp:Panel>
+
+
+    </div>
 </asp:Content>

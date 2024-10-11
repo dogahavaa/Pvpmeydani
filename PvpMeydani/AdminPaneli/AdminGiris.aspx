@@ -15,7 +15,6 @@
             </div>
             <div class="kucukSatir cizgi"></div>
             <div class="form">
-
                 <label class="kucukSatir">Mail</label><br />
                 <div class="buyukSatir">
                     <asp:TextBox ID="tb_mail" runat="server" CssClass="textBoxStyle"></asp:TextBox>

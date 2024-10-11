@@ -12,16 +12,26 @@ namespace PvpMeydani.AdminPaneli
     public partial class YoneticiIslemleri : System.Web.UI.Page
     {
         VeriModeli vm = new VeriModeli();
+        Yonetici y;
         protected void Page_Load(object sender, EventArgs e)
         {
-            Yonetici y = (Yonetici)Session["Yonetici"];
+            y = (Yonetici)Session["Yonetici"];
             if (y != null)
             {
-                if (y.Gorev == "Admin")
+                if (vm.YetkiSorgula(34, y.GorevID))
                 {
-                    yetkili.Visible = true;
-                    yetkisiz.Visible = false;
+                    pnl_yetkili.Visible = true;
+                    pnl_yetkisiz.Visible = false;
                 }
+                else
+                {
+                    pnl_yetkisiz.Visible = true;
+                    pnl_yetkili.Visible = false;
+                }
+            }
+            else
+            {
+                Response.Redirect("AdminGiris.aspx");
             }
 
             

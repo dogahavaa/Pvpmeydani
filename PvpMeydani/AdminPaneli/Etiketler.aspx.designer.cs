@@ -15,13 +15,13 @@ namespace PvpMeydani.AdminPaneli
     {
 
         /// <summary>
-        /// yetkili control.
+        /// pnl_yetkili control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel yetkili;
+        protected global::System.Web.UI.WebControls.Panel pnl_yetkili;
 
         /// <summary>
         /// tb_turBilgisi control.
@@ -42,6 +42,15 @@ namespace PvpMeydani.AdminPaneli
         protected global::System.Web.UI.WebControls.LinkButton lbtn_turEkle;
 
         /// <summary>
+        /// lbl_turEkleMesaj control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_turEkleMesaj;
+
+        /// <summary>
         /// lv_turler control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace PvpMeydani.AdminPaneli
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView lv_turler;
+
+        /// <summary>
+        /// lbl_turMesaj control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_turMesaj;
 
         /// <summary>
         /// tb_zorlukEkle control.
@@ -69,6 +87,15 @@ namespace PvpMeydani.AdminPaneli
         protected global::System.Web.UI.WebControls.LinkButton lbtn_zorlukEkle;
 
         /// <summary>
+        /// lbl_zorlukEkleMesaj control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_zorlukEkleMesaj;
+
+        /// <summary>
         /// lv_zorluk control.
         /// </summary>
         /// <remarks>
@@ -78,12 +105,21 @@ namespace PvpMeydani.AdminPaneli
         protected global::System.Web.UI.WebControls.ListView lv_zorluk;
 
         /// <summary>
-        /// yetkisiz control.
+        /// lbl_zorlukMesaj control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel yetkisiz;
+        protected global::System.Web.UI.WebControls.Label lbl_zorlukMesaj;
+
+        /// <summary>
+        /// pnl_yetkisiz control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnl_yetkisiz;
     }
 }

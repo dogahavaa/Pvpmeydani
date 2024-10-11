@@ -61,7 +61,7 @@ namespace PvpMeydani.AdminPaneli
                     vm.YetkiSil(id);
                     lv_gorevler.DataSource = vm.YetkiListele();
                     lv_gorevler.DataBind();
-                    
+                    lbl_silinemez.Visible = false;
                 }
                 else
                 {

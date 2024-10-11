@@ -48,6 +48,7 @@
     <Compile Include="Tur.cs" />
     <Compile Include="Uye.cs" />
     <Compile Include="VeriModeli.cs" />
+    <Compile Include="YetkilendirmeGorevAra.cs" />
     <Compile Include="Yonetici.cs" />
     <Compile Include="Zorluk.cs" />
   </ItemGroup>

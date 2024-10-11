@@ -27,8 +27,20 @@ a {
     min-height: 50px;
 }
 .yetkiMesaji {
-    font-size: 16pt;
+    font-size: 14pt;
     font-weight: 500;
+    color:#a00000;
+}
+.yetkiMesajKutusuKucuk{
+    margin-top:15px;
+    margin-left:10px;
+}
+.yetkiMesajiKucuk {
+    margin-left:10px;
+    margin-top:10px;
+    font-size: 12pt;
+    font-weight: 500;
+    color: #a00000;
 }
 .anaTasiyici {
     float: left;
@@ -88,11 +100,3 @@ a {
 .onaylaButon:hover{
     text-decoration:underline;
 }
-/*.pnl_basarisizIslem {
-    CREATE TABLE Yetkilendirme (
-	ID INT IDENTITY,
-	Islem NVARCHAR(100),
-	Onay BIT,
-	CONSTRAINT pk_yetkilendirme PRIMARY KEY(ID),
-)
-}*/

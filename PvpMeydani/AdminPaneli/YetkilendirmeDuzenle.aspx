@@ -16,23 +16,24 @@
                         <table cellspacing="0" cellpadding="0" class="tablo">
                             <tr>
                                 <th>İşlem Açıklaması</th>
-                                <th>Erişilebilirlik</th>
+                                <th>İzin Durumu</th>
+                                <th>Seçenekler</th>
                             </tr>
                             <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
                         </table>
                     </LayoutTemplate>
                     <ItemTemplate>
                         <tr>
-                            <td style="text-align: left"><%#Eval("IslemAciklamasi") %></td>
+                            <td style="text-align: left"><%#Eval("YetkilendirmeIslemi") %></td>
+                            <td><%# Eval("Onay") %></td>
                             <td>
-                                <asp:CheckBox ID="cb_erisebilir" runat="server" />
+                                <asp:LinkButton ID="lbtn_true" runat="server" CssClass="secenekResim" CommandArgument='<%# Eval("YetkilendirmeID") %>' CommandName="izinDegistir">
+                                    <asp:Image ID="img_ikon" runat="server" ImageUrl="Images/Icons/refresh.png" />
+                                </asp:LinkButton>
                             </td>
                         </tr>
                     </ItemTemplate>
                 </asp:ListView>
-                <div style="margin-top:30px; text-align:center">
-                <asp:LinkButton ID="lbtn_onayla" runat="server" CssClass="onaylaButon" Text="İşlemleri Onayla" OnClick="lbtn_onayla_Click"></asp:LinkButton>
-                </div>
             </div>
         </div>
     </div>

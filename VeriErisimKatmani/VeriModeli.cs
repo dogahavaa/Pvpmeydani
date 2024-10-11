@@ -525,11 +525,31 @@ namespace VeriErisimKatmani
         {
             try
             {
+                //Yeni görev oluştur
                 cmd.CommandText = "INSERT INTO Gorevler(Gorev) VALUES(@yetki)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@yetki", yetki);
                 con.Open();
                 cmd.ExecuteNonQuery();
+                //Oluşturulan görevin ID'sini al
+                cmd.CommandText = "SELECT ID FROM Gorevler WHERE Gorev=@gorev";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@gorev", yetki);
+                int gorevID = Convert.ToInt32(cmd.ExecuteScalar());
+                con.Close();//IslemListele() içerisinde bir bağlantı aç daha olduğu için önce kapat
+
+                List<Islem> islemler = IslemListele();
+                con.Open();//islemleri aldıktan sonra bağlantıyı tekrar aç.
+                
+                for(int i=0; i < islemler.Count(); i++)//Tüm işlemleri yeni eklenen göreve ekleyerek ara tablo oluştur.
+                {
+                    cmd.CommandText = "INSERT INTO YetkilendirmeGorevAra(GorevID, YetkilendirmeID, Onay) VALUES(@gorevID, @yetkilendirmeID, @onay)";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@gorevID", gorevID);
+                    cmd.Parameters.AddWithValue("@yetkilendirmeID", islemler[i].ID);
+                    cmd.Parameters.AddWithValue("@onay", false);
+                    cmd.ExecuteNonQuery();
+                }
             }
             finally
             {
@@ -584,7 +604,14 @@ namespace VeriErisimKatmani
                     cmd.Parameters.AddWithValue("@gorevID", gorevID);
                     cmd.ExecuteNonQuery();
                 }
-                // Silme işlemi
+                //*-*-*-*- Ara tablodan silme işlemi -*-*-*-*//
+                cmd.CommandText = "DELETE FROM YetkilendirmeGorevAra WHERE GorevID=@araGorevID";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@araGorevID", gorevID);
+                cmd.ExecuteNonQuery();
+
+
+                // *-*-*-*- Asıl silme işlemi -*-*-*-*//
                 cmd.CommandText = "DELETE FROM Gorevler WHERE ID=@id";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@id", gorevID);
@@ -854,15 +881,37 @@ namespace VeriErisimKatmani
 
         #region Yetkilendirme İşlemleri
 
-        public void IslemOlustur(Islem i)
+        public void IslemOlustur(Islem i) // Güzel metot kanks
         {
             try
             {
+                //Yetkilendirme işlemi oluştur.
                 cmd.CommandText = "INSERT INTO Yetkilendirme(Islem) VALUES(@islem)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@islem", i.IslemAciklamasi);
                 con.Open();
                 cmd.ExecuteNonQuery();
+
+                //Yeni eklenen yetkilendirme işleminin id'sini al.
+                cmd.CommandText = "SELECT ID FROM Yetkilendirme WHERE Islem=@islemA";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@islemA", i.IslemAciklamasi);
+                int islemID = Convert.ToInt32(cmd.ExecuteScalar());
+
+                con.Close(); //pozisyonları listeleyebilmek için bağlantı kapat
+                List<Gorev> pozisyonList = YetkiListele();
+                con.Open();
+
+                // Daha önceden oluşturulmuş her bir pozisyona yeni oluşturulan yetkilendirme işlemini ara tabloda doldur.
+                foreach (Gorev pozisyon in pozisyonList)
+                {
+                    cmd.CommandText = "INSERT INTO YetkilendirmeGorevAra(GorevID, YetkilendirmeID, Onay) VALUES (@gID, @yID, @o)";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@gID", pozisyon.ID);
+                    cmd.Parameters.AddWithValue("@yID", islemID);
+                    cmd.Parameters.AddWithValue("@o", false);
+                    cmd.ExecuteNonQuery();
+                }
             }
             finally
             {
@@ -902,10 +951,74 @@ namespace VeriErisimKatmani
         {
             try
             {
+                // Önce ara tabloda ilgili yetkilendirmeID'ye sahip gorevID'leri sil
+                cmd.CommandText = "DELETE FROM YetkilendirmeGorevAra WHERE YetkilendirmeID=@yID";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@yID", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+                // Daha sonra yetkilendirme tablosundan işlemi sil
                 cmd.CommandText = "DELETE FROM Yetkilendirme WHERE ID=@id";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                con.Close();
+            }
+        } 
+
+        public List<YetkilendirmeGorevAra> YGAraTabloListele(int gorevID)
+        {
+            try
+            {
+                List<YetkilendirmeGorevAra> araTabloSatirlari = new List<YetkilendirmeGorevAra>();
+
+                cmd.CommandText = "SELECT YG.GorevID, G.Gorev, YG.YetkilendirmeID, Y.Islem, YG.Onay FROM YetkilendirmeGorevAra AS YG JOIN Gorevler AS G ON YG.GorevID = G.ID JOIN Yetkilendirme AS Y ON YG.YetkilendirmeID = Y.ID WHERE GorevID=@gID";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@gID", gorevID);
                 con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    YetkilendirmeGorevAra yga = new YetkilendirmeGorevAra();
+                    yga.GorevID = reader.GetInt32(0);
+                    yga.GorevAdi = reader.GetString(1);
+                    yga.YetkilendirmeID = reader.GetInt32(2);
+                    yga.YetkilendirmeIslemi = reader.GetString(3);
+                    yga.Onay = reader.GetBoolean(4);
+                    araTabloSatirlari.Add(yga);
+                }
+                return araTabloSatirlari;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+
+        public void YetkilendirmeDurumuDegistir(int yID, int gID)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT Onay FROM YetkilendirmeGorevAra WHERE YetkilendirmeID=@yID AND GorevID=@gID";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("yID", yID);
+                cmd.Parameters.AddWithValue("gID", gID);
+                con.Open();
+                bool onay = Convert.ToBoolean(cmd.ExecuteScalar());
+                cmd.CommandText = "UPDATE YetkilendirmeGorevAra SET Onay=@onay WHERE YetkilendirmeID=@yID AND GorevID=@gID";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@onay", !onay);
+                cmd.Parameters.AddWithValue("yID", yID);
+                cmd.Parameters.AddWithValue("gID", gID);
                 cmd.ExecuteNonQuery();
             }
             finally
@@ -914,30 +1027,20 @@ namespace VeriErisimKatmani
             }
         }
 
-        public void AraTabloDoldur()
+        public bool YetkiSorgula(int yID, int gID)
         {
             try
             {
-                List<Gorev> goreviIDleri = new List<Gorev>();
-                List<Islem> islemIDleri = new List<Islem>();
-                cmd.CommandText = "SELECT ID FROM Gorevler";
+                cmd.CommandText = "SELECT Onay FROM YetkilendirmeGorevAra WHERE GorevID=@gID AND YetkilendirmeID=@yID";
                 cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@gID", gID);
+                cmd.Parameters.AddWithValue("@yID", yID);
                 con.Open();
-                SqlDataReader gorevReader = cmd.ExecuteReader();
-                while (gorevReader.Read())
-                {
-                    Gorev g = new Gorev();
-                    g.ID = gorevReader.GetInt32(0);
-                    goreviIDleri.Add(g);
-                }
-                SqlDataReader islemReader = cmd.ExecuteReader();
-                while (islemReader.Read())
-                {
-                    Islem i = new Islem();
-                    i.ID = islemReader.GetInt32(0);
-                    islemIDleri.Add(i);
-                }
-                
+                return Convert.ToBoolean(cmd.ExecuteScalar());
+            }
+            catch
+            {
+                return false;
             }
             finally
             {
