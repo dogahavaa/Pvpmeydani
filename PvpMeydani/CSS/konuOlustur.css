@@ -1,0 +1,45 @@
+﻿.konuFrame {
+    width: 1000px;
+    min-height: 800px;
+    margin: 0px auto;
+    padding-top: 20px;
+}
+.konuIcerik {
+    border: 1px solid silver;
+    border-radius: 5px;
+    min-height:400px;
+    float:left
+}
+.konuSolFrame{
+    float:left;
+    margin-left:30px;
+    border-right:1px solid silver;
+    padding-right:70px;
+    min-height:250px;
+}
+.konuSagFrame{
+    float:right;
+    margin-right:50px;
+}
+.icerik {
+    padding: 10px 10px;
+    border: 1px solid silver;
+    min-width: 900px;
+    max-width: 900px;
+    border-radius: 5px;
+    min-height:300px;
+    max-height:300px;
+}
+.konuOlustur {
+    padding: 10px 50px;
+    background-color: #F56D21;
+    border-radius:7px;
+    color:white;
+    font-weight:400;
+}
+.konuDdl {
+    padding: 10px 10px;
+    border: 1px solid silver;
+    width: 422px;
+    border-radius: 5px;
+}

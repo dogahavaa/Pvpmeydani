@@ -106,6 +106,9 @@
                             </tr>
                         </ItemTemplate>
                     </asp:ListView>
+                    <div class="yetkiMesajKutusuKucuk">
+                        <asp:Label ID="lbl_yoneticiIslemleriMesaj" runat="server" CssClass="yetkiMesajiKucuk" Visible="false"></asp:Label>
+                    </div>
                 </div>
             </div>
         </asp:Panel>

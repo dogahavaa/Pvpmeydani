@@ -877,6 +877,44 @@ namespace VeriErisimKatmani
             }
         }
 
+        public Uye UyeGetir(int id)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT * FROM Uyeler WHERE ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                Uye u = new Uye();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    u.ID = reader.GetInt32(0);
+                    u.Ad = reader.GetString(1);
+                    u.Soyad = reader.GetString(2);
+                    u.KullaniciAdi = reader.GetString(3);
+                    u.Mail = reader.GetString(4);
+                    u.Sifre = reader.GetString(5);
+                    u.ProfilFotografi = reader.GetString(6);
+                    u.Onayli = reader.GetBoolean(7);
+                    u.Donmus = reader.GetBoolean(8);
+                    u.Silinmis = reader.GetBoolean(9);
+                    u.MesajSayisi = reader.GetInt32(10);
+                    u.KonuSayisi = reader.GetInt32(11);
+                    u.ReaksiyonSkoru = reader.GetInt32(12);
+                    u.UyelikTarihi = reader.GetDateTime(13);
+                }
+                return u;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
         #endregion
 
         #region Yetkilendirme İşlemleri
@@ -1050,5 +1088,48 @@ namespace VeriErisimKatmani
 
         #endregion
 
+        #region Konu İşlemleri
+
+        public bool KonuOlustur(Konu k)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO Konular(TurID, ZorlukID, UyeID, Baslik, Icerik, ServerAdi, Website, AcilisTarihi, ServerDurumu, VipKonu, EklenmeTarihi, GuncellenmeTarihi, GoruntulemeSayisi, BegeniSayisi, YorumSayisi, Onayli, SonYorumTarihi, SonYorumKAdi) VALUES(@turID, @zorlukID, @uyeID, @baslik, @icerik, @serverAdi, @website, @acilisTarihi, @serverDurumu, @vipKonu, @eklenmeTarihi, @guncellenmeTarihi, @goruntulemeSayisi, @begeniSayisi, @yorumSayisi, @onayli, @sonYorumTarihi, @sonYorumKAdi)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@turID", k.TurID);
+                cmd.Parameters.AddWithValue("@zorlukID", k.ZorlukID);
+                cmd.Parameters.AddWithValue("@uyeID", 1532); // DEĞİŞTİR !!!!
+                cmd.Parameters.AddWithValue("@baslik", k.Baslik);
+                cmd.Parameters.AddWithValue("@icerik", k.Icerik);
+                cmd.Parameters.AddWithValue("@serverAdi", k.ServerAdi);
+                cmd.Parameters.AddWithValue("@website", k.Website);
+                cmd.Parameters.AddWithValue("@acilisTarihi", k.AcilisTarihi);
+                cmd.Parameters.AddWithValue("@serverDurumu", k.ServerDurumu);
+                cmd.Parameters.AddWithValue("@vipKonu", false);
+                cmd.Parameters.AddWithValue("@eklenmeTarihi", DateTime.Now);
+                cmd.Parameters.AddWithValue("@guncellenmeTarihi", DateTime.Now);
+                cmd.Parameters.AddWithValue("@goruntulemeSayisi", 0);
+                cmd.Parameters.AddWithValue("@begeniSayisi", 0);
+                cmd.Parameters.AddWithValue("@yorumSayisi", 0);
+                cmd.Parameters.AddWithValue("@onayli", false);
+                cmd.Parameters.AddWithValue("@sonYorumTarihi", DateTime.Now);
+                Uye uye = UyeGetir(1532); // DEĞİŞTİR !!!!
+                cmd.Parameters.AddWithValue("@sonYorumKAdi", uye.KullaniciAdi);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        
+        #endregion
     }
 }

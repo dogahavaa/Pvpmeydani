@@ -1,19 +1,42 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="PvpMeydani.MasterPage" %>
-
 <!DOCTYPE html>
-
 <html>
 <head runat="server">
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
+        <link href="CSS/MasterCSS.css" rel="stylesheet" />
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <h2>MasterPage</h2>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+        <div class="anaTasiyici">
+            <div class="ustMenu">
+                <div class="logoDiv">
+                    <a href="Default.aspx">
+                        <img src="Resimler/metin2-logo.png" class="logo" /></a>
+                </div>
+
+                <div class="sayfaAdi">
+                    <label>PVP MEYDANI</label>
+                </div>
+
+                <div class="uyeIslemleri">
+                    <asp:Panel ID="pnl_uye" runat="server" Visible="false">
+                        <asp:HyperLink ID="hl_profileGit" runat="server" CssClass="kullaniciAdi" NavigateUrl="#" Text="kullaniciAdi"></asp:HyperLink>
+                        <asp:LinkButton ID="lbtn_guvenliCikis" runat="server" CssClass="cikis" Text="Güvenli Çıkış"></asp:LinkButton>
+                    </asp:Panel>
+                    <asp:Panel ID="pnl_misafir" runat="server" Visible="true">
+                        <a href="UyeGiris.aspx" class="kullaniciAdi">Giriş Yap</a>
+                        <a href="UyeOl.aspx" class="kullaniciAdi">Üye Ol</a>
+                    </asp:Panel>
+                </div>
+            </div>
+        </div>
+        <div class="anaTasiyici">
+            <div class="arkaPlan">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
         </div>
     </form>
 </body>

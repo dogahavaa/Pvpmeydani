@@ -11,6 +11,7 @@ namespace PvpMeydani.AdminPaneli
     public partial class Yetkilendirme : System.Web.UI.Page
     {
         VeriModeli vm = new VeriModeli();
+        Yonetici y;
         protected void Page_Load(object sender, EventArgs e)
         {
             lv_gorevler.DataSource = vm.YetkiListele();
@@ -19,17 +20,16 @@ namespace PvpMeydani.AdminPaneli
             lv_islemler.DataSource = vm.IslemListele();
             lv_islemler.DataBind();
 
-            if (!IsPostBack)
+            y = (Yonetici)Session["Yonetici"];
+            if (vm.YetkiSorgula(35, y.GorevID))
             {
-                /*
-                 * 2- Pozisyonların yetkilendirme işlemi listelenen yerin seçenekler kısmından gidilecek.
-                 * 3- Yetkilendirilecek işlem başarılı olursa bilgi verecek. (void olan kısmı bool ile değiştir)
-                 * 4- Gorevler'de seçeneklere yetkileri düzenle ikonu ekle ve içeriğini yaz.
-                 * 4.1- GorevYetkilendir.aspx oluştur.
-                 * 4.2- GorevYetkilendir.aspx sayfasına gelirken hangi yetkiyle gittiğini de gönder.
-                 * 4.3- Yetkilerini düzenle.
-                 * 5- Sayfaların ve işlemlerin yetki durumlarını falan her bi boku güncelle.**
-                 */
+                pnl_yetkili.Visible = true;
+                pnl_yetkisiz.Visible = false;
+            }
+            else
+            {
+                pnl_yetkili.Visible = false;
+                pnl_yetkisiz.Visible = true;
             }
 
         }

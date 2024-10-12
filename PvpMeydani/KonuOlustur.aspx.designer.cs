@@ -7,92 +7,92 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PvpMeydani.AdminPaneli
+namespace PvpMeydani
 {
 
 
-    public partial class Yetkilendirme
+    public partial class KonuOlustur
     {
 
         /// <summary>
-        /// pnl_yetkili control.
+        /// tb_konuBaslik control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnl_yetkili;
+        protected global::System.Web.UI.WebControls.TextBox tb_konuBaslik;
 
         /// <summary>
-        /// tb_yetkiAdi control.
+        /// tb_serverAdi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_yetkiAdi;
+        protected global::System.Web.UI.WebControls.TextBox tb_serverAdi;
 
         /// <summary>
-        /// lbtn_yetkiEkle control.
+        /// ddl_tur control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtn_yetkiEkle;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_tur;
 
         /// <summary>
-        /// lv_gorevler control.
+        /// ddl_zorluk control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lv_gorevler;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_zorluk;
 
         /// <summary>
-        /// lbl_silinemez control.
+        /// tb_webSite control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_silinemez;
+        protected global::System.Web.UI.WebControls.TextBox tb_webSite;
 
         /// <summary>
-        /// lv_islemler control.
+        /// cl_acilisTarihi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lv_islemler;
+        protected global::System.Web.UI.WebControls.Calendar cl_acilisTarihi;
 
         /// <summary>
-        /// tb_islem control.
+        /// cb_serverDurumu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_islem;
+        protected global::System.Web.UI.WebControls.CheckBox cb_serverDurumu;
 
         /// <summary>
-        /// lbtn_islemolustur control.
+        /// tb_icerik control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtn_islemolustur;
+        protected global::System.Web.UI.WebControls.TextBox tb_icerik;
 
         /// <summary>
-        /// pnl_yetkisiz control.
+        /// lbtn_konuOlustur control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnl_yetkisiz;
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_konuOlustur;
     }
 }

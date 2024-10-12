@@ -102,7 +102,12 @@
     <Content Include="AdminPaneli\Uyeler.aspx" />
     <Content Include="AdminPaneli\Yetkilendirme.aspx" />
     <Content Include="AdminPaneli\YetkilendirmeDuzenle.aspx" />
+    <Content Include="CSS\GenelCSS.css" />
+    <Content Include="CSS\konuOlustur.css" />
+    <Content Include="CSS\MasterCSS.css" />
     <Content Include="Default.aspx" />
+    <Content Include="KonuOlustur.aspx" />
+    <Content Include="Resimler\metin2-logo.png" />
     <Content Include="Resimler\UyeResimleri\none.png" />
     <Content Include="Resimler\YoneticiResimleri\none.png" />
     <Content Include="AdminPaneli\YoneticiDuzenle.aspx" />
@@ -181,6 +186,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KonuOlustur.aspx.cs">
+      <DependentUpon>KonuOlustur.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KonuOlustur.aspx.designer.cs">
+      <DependentUpon>KonuOlustur.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>

@@ -33,7 +33,6 @@ namespace PvpMeydani.AdminPaneli
             {
                 Response.Redirect("AdminGiris.aspx");
             }
-
             
             if (!IsPostBack)
             {
@@ -47,32 +46,44 @@ namespace PvpMeydani.AdminPaneli
         protected void lv_yoneticiEkibi_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
             int id = Convert.ToInt32(e.CommandArgument);
-            if (e.CommandName == "yDurumDegistir")
+
+            if (vm.YetkiSorgula(47, y.GorevID))
             {
-                vm.YoneticiDurumDegistir(id);
-            }
-            if (e.CommandName == "ySil")
-            {
-                vm.YoneticiSil(id);
-            }
-            if (e.CommandName == "ySilineniGeriAl")
-            {
-                vm.YoneticiSilineniGeriAl(id);
-            }
-            if (e.CommandName == "yDuzenle")
-            {
-                Yonetici y = vm.YoneticiGetir(id);
-                tb_ad.Text = y.Ad;
-                tb_soyad.Text = y.Soyad;
-                tb_kullaniciAdi.Text = y.KullaniciAdi;
-                tb_mail.Text = y.Mail;
-                tb_sifre.Text = y.Sifre;
-                ddl_yetki.SelectedValue = y.GorevID.ToString();
-                if (!IsPostBack)
+                lbl_yoneticiIslemleriMesaj.Visible = false;
+                if (e.CommandName == "yDurumDegistir")
                 {
-                    vm.YoneticiDuzenle(y);
+                    vm.YoneticiDurumDegistir(id);
+                }
+                if (e.CommandName == "ySil")
+                {
+                    vm.YoneticiSil(id);
+                }
+                if (e.CommandName == "ySilineniGeriAl")
+                {
+                    vm.YoneticiSilineniGeriAl(id);
+                }
+                if (e.CommandName == "yDuzenle")
+                {
+                    Yonetici y = vm.YoneticiGetir(id);
+                    tb_ad.Text = y.Ad;
+                    tb_soyad.Text = y.Soyad;
+                    tb_kullaniciAdi.Text = y.KullaniciAdi;
+                    tb_mail.Text = y.Mail;
+                    tb_sifre.Text = y.Sifre;
+                    ddl_yetki.SelectedValue = y.GorevID.ToString();
+                    if (!IsPostBack)
+                    {
+                        vm.YoneticiDuzenle(y);
+                    }
                 }
             }
+            else
+            {
+                lbl_yoneticiIslemleriMesaj.Visible = true;
+                lbl_yoneticiIslemleriMesaj.Text = "Yönetici seçeneklerini kullanma yetkiniz yoktur.";
+            }
+
+            
             ddlFiltre();
         }
 
@@ -92,32 +103,40 @@ namespace PvpMeydani.AdminPaneli
                                 {
                                     if (!string.IsNullOrEmpty(tb_sifre.Text))
                                     {
-                                        pnl_basarisiz.Visible = false;
-                                        Yonetici y = new Yonetici();
-                                        y.Ad = tb_ad.Text;
-                                        y.Soyad = tb_soyad.Text;
-                                        y.KullaniciAdi = tb_kullaniciAdi.Text;
-                                        y.Mail = tb_mail.Text;
-                                        y.Sifre = tb_sifre.Text;
-                                        y.GorevID = Convert.ToInt32(ddl_yetki.SelectedItem.Value);
-
-                                        if (fu_profilResmi.HasFile)
+                                        if (vm.YetkiSorgula(48, y.GorevID))
                                         {
-                                            string isim = Guid.NewGuid().ToString();
-                                            string yol = fu_profilResmi.FileName;
-                                            FileInfo fi = new FileInfo(yol);
-                                            string uzanti = fi.Extension;
-                                            string tamisim = isim + uzanti;
-                                            fu_profilResmi.SaveAs(Server.MapPath("../Resimler/YoneticiResimleri/" + tamisim));
-                                            y.ProfilFotografi = tamisim;
+                                            pnl_basarisiz.Visible = false;
+                                            Yonetici yo = new Yonetici();
+                                            yo.Ad = tb_ad.Text;
+                                            yo.Soyad = tb_soyad.Text;
+                                            yo.KullaniciAdi = tb_kullaniciAdi.Text;
+                                            yo.Mail = tb_mail.Text;
+                                            yo.Sifre = tb_sifre.Text;
+                                            yo.GorevID = Convert.ToInt32(ddl_yetki.SelectedItem.Value);
+
+                                            if (fu_profilResmi.HasFile)
+                                            {
+                                                string isim = Guid.NewGuid().ToString();
+                                                string yol = fu_profilResmi.FileName;
+                                                FileInfo fi = new FileInfo(yol);
+                                                string uzanti = fi.Extension;
+                                                string tamisim = isim + uzanti;
+                                                fu_profilResmi.SaveAs(Server.MapPath("../Resimler/YoneticiResimleri/" + tamisim));
+                                                y.ProfilFotografi = tamisim;
+                                            }
+                                            else
+                                            {
+                                                y.ProfilFotografi = "none.png";
+                                            }
+                                            vm.YoneticiEkle(y);
+                                            lv_yoneticiEkibi.DataSource = vm.YoneticiListele();
+                                            lv_yoneticiEkibi.DataBind();
                                         }
                                         else
                                         {
-                                            y.ProfilFotografi = "none.png";
+                                            lbl_yoneticiIslemleriMesaj.Visible = true;
+                                            lbl_yoneticiIslemleriMesaj.Text = "Yönetici oluşturma yetkiniz yoktur.";
                                         }
-                                        vm.YoneticiEkle(y);
-                                        lv_yoneticiEkibi.DataSource = vm.YoneticiListele();
-                                        lv_yoneticiEkibi.DataBind();
                                     }
                                     else
                                     {

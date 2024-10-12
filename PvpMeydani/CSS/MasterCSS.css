@@ -1,0 +1,66 @@
+﻿*, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Poppins;
+    background-color: #ffe8d7;
+    color: #211C19;
+}
+
+a {
+    text-decoration: none;
+}
+.anaTasiyici{
+    width:1360px;
+    margin:0 auto;
+}
+.ustMenu {
+    min-height: 130px;
+    background: #f5eae1;
+    border-bottom:1px solid silver;
+}
+.logoDiv{
+    float:left;
+}
+.logo {
+    width: 130px;
+    height: 130px;
+    margin-left:20px;
+}
+.uyeIslemleri{
+    float:right;
+    margin-right:20px;
+    margin-top:50px;
+    font-size:13pt;
+}
+.kullaniciAdi {
+    color: #F56D21;
+    margin-right:10px;
+}
+.kullaniciAdi:hover{
+    text-decoration:underline;
+}
+.cikis{
+    color:#670000;
+}
+.cikis:hover{
+    text-decoration:underline;
+}
+.sayfaAdi {
+    font-size: 40pt;
+    margin-left: 380px;
+    margin-top: 25px;
+    float: left;
+    font-weight: 800;
+    color: #F56D21;
+    text-shadow: 0px 6px 9px rgba(245,109,33,0.64);
+}
+.arkaPlan {
+    min-height: 1500px;
+    background-color: #fef3ea;
+}
+
+/*background-color:#eae2db;*/
+
