@@ -1094,6 +1094,7 @@ namespace VeriErisimKatmani
         {
             try
             {
+                Uye uye = UyeGetir(1532);
                 cmd.CommandText = "INSERT INTO Konular(TurID, ZorlukID, UyeID, Baslik, Icerik, ServerAdi, Website, AcilisTarihi, ServerDurumu, VipKonu, EklenmeTarihi, GuncellenmeTarihi, GoruntulemeSayisi, BegeniSayisi, YorumSayisi, Onayli, SonYorumTarihi, SonYorumKAdi) VALUES(@turID, @zorlukID, @uyeID, @baslik, @icerik, @serverAdi, @website, @acilisTarihi, @serverDurumu, @vipKonu, @eklenmeTarihi, @guncellenmeTarihi, @goruntulemeSayisi, @begeniSayisi, @yorumSayisi, @onayli, @sonYorumTarihi, @sonYorumKAdi)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@turID", k.TurID);
@@ -1113,13 +1114,12 @@ namespace VeriErisimKatmani
                 cmd.Parameters.AddWithValue("@yorumSayisi", 0);
                 cmd.Parameters.AddWithValue("@onayli", false);
                 cmd.Parameters.AddWithValue("@sonYorumTarihi", DateTime.Now);
-                Uye uye = UyeGetir(1532); // DEĞİŞTİR !!!!
                 cmd.Parameters.AddWithValue("@sonYorumKAdi", uye.KullaniciAdi);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch
+            catch(Exception ex)
             {
                 return false;
             }
@@ -1129,7 +1129,120 @@ namespace VeriErisimKatmani
             }
         }
 
-        
+        public List<Konu> KonuListele()
+        {
+            try
+            {
+                cmd.CommandText = "SELECT K.ID, K.UyeID, U.KullaniciAdi, K.TurID, T.Tur, K.ZorlukID, Z.Zorluk, K.Baslik, K.Icerik, K.ServerAdi, K.Website, K.AcilisTarihi, K.ServerDurumu, K.VipKonu, K.EklenmeTarihi, K.GuncellenmeTarihi, K.GoruntulemeSayisi, K.BegeniSayisi, K.YorumSayisi, K.Onayli, K.SonYorumTarihi, K.SonYorumKAdi FROM Konular AS K JOIN Uyeler AS U ON U.ID = K.UyeID JOIN Zorluklar AS Z ON Z.ID = K.ZorlukID JOIN Turler AS T ON T.ID = K.TurID";
+                cmd.Parameters.Clear();
+                con.Open();
+                List<Konu> konular = new List<Konu>();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Konu k = new Konu();
+                    k.ID = reader.GetInt32(0);
+                    k.UyeID = reader.GetInt32(1);
+                    k.UyeKullaniciAdi = reader.GetString(2);
+                    k.TurID = reader.GetInt32(3);
+                    k.TurAdi = reader.GetString(4);
+                    k.ZorlukID = reader.GetInt32(5);
+                    k.Zorluk = reader.GetString(6);
+                    k.Baslik = reader.GetString(7);
+                    k.Icerik = reader.GetString(8);
+                    k.ServerAdi = reader.GetString(9);
+                    k.Website = reader.GetString(10);
+                    k.AcilisTarihi = reader.GetDateTime(11);
+                    k.ServerDurumu = reader.GetBoolean(12);
+                    k.VipKonu = reader.GetBoolean(13);
+                    k.EklenmeTarihi = reader.GetDateTime(14);
+                    k.GuncellenmeTarihi = reader.GetDateTime(15);
+                    k.GoruntulemeSayisi = reader.GetInt32(16);
+                    k.BegeniSayisi = reader.GetInt32(17);
+                    k.YorumSayisi = reader.GetInt32(18);
+                    k.Onayli = reader.GetBoolean(19);
+                    k.SonYorumTarihi = reader.GetDateTime(20);
+                    k.SonYorumKAdi = reader.GetString(21);
+                    konular.Add(k);
+                }
+                return konular;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public List<Konu> KonuListele(bool onayli)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT K.ID, K.UyeID, U.KullaniciAdi, K.TurID, T.Tur, K.ZorlukID, Z.Zorluk, K.Baslik, K.Icerik, K.ServerAdi, K.Website, K.AcilisTarihi, K.ServerDurumu, K.VipKonu, K.EklenmeTarihi, K.GuncellenmeTarihi, K.GoruntulemeSayisi, K.BegeniSayisi, K.YorumSayisi, K.Onayli, K.SonYorumTarihi, K.SonYorumKAdi FROM Konular AS K JOIN Uyeler AS U ON U.ID = K.UyeID JOIN Zorluklar AS Z ON Z.ID = K.ZorlukID JOIN Turler AS T ON T.ID = K.TurID WHERE K.Onayli=@onayli";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@onayli", onayli);
+                con.Open();
+                List<Konu> konular = new List<Konu>();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Konu k = new Konu();
+                    k.ID = reader.GetInt32(0);
+                    k.UyeID = reader.GetInt32(1);
+                    k.UyeKullaniciAdi = reader.GetString(2);
+                    k.TurID = reader.GetInt32(3);
+                    k.TurAdi = reader.GetString(4);
+                    k.ZorlukID = reader.GetInt32(5);
+                    k.Zorluk = reader.GetString(6);
+                    k.Baslik = reader.GetString(7);
+                    k.Icerik = reader.GetString(8);
+                    k.ServerAdi = reader.GetString(9);
+                    k.Website = reader.GetString(10);
+                    k.AcilisTarihi = reader.GetDateTime(11);
+                    k.ServerDurumu = reader.GetBoolean(12);
+                    k.VipKonu = reader.GetBoolean(13);
+                    k.EklenmeTarihi = reader.GetDateTime(14);
+                    k.GuncellenmeTarihi = reader.GetDateTime(15);
+                    k.GoruntulemeSayisi = reader.GetInt32(16);
+                    k.BegeniSayisi = reader.GetInt32(17);
+                    k.YorumSayisi = reader.GetInt32(18);
+                    k.Onayli = reader.GetBoolean(19);
+                    k.SonYorumTarihi = reader.GetDateTime(20);
+                    k.SonYorumKAdi = reader.GetString(21);
+                    konular.Add(k);
+                }
+                return konular;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void KonuOnayla(int id)
+        {
+            try
+            {
+                cmd.CommandText = "UPDATE Konular SET Onayli=@onayli WHERE ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@onayli", true);
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
         #endregion
     }
 }

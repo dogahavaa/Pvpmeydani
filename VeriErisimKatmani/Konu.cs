@@ -8,6 +8,7 @@ namespace VeriErisimKatmani
 {
     public class Konu
     {
+        public int ID { get; set; }
         public int TurID { get; set; }
         public string TurAdi { get; set; }
         public int ZorlukID { get; set; }

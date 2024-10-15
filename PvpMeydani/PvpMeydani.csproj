@@ -81,6 +81,9 @@
     <Content Include="AdminPaneli\Images\black_background-200x40.png" />
     <Content Include="AdminPaneli\Images\black_background-400x400.png" />
     <Content Include="AdminPaneli\Images\dogahavapff.jpeg" />
+    <Content Include="AdminPaneli\Images\Icons\vip.png" />
+    <Content Include="AdminPaneli\Images\Icons\unvip.png" />
+    <Content Include="AdminPaneli\Images\Icons\find.png" />
     <Content Include="AdminPaneli\Images\Icons\chat.png" />
     <Content Include="AdminPaneli\Images\Icons\check.png" />
     <Content Include="AdminPaneli\Images\Icons\editt.png" />
@@ -99,6 +102,8 @@
     <Content Include="AdminPaneli\Images\metin2-logo.png" />
     <Content Include="AdminPaneli\Images\none.png" />
     <Content Include="AdminPaneli\Images\x.png" />
+    <Content Include="AdminPaneli\KonuDetay.aspx" />
+    <Content Include="AdminPaneli\KonuIslemleri.aspx" />
     <Content Include="AdminPaneli\Uyeler.aspx" />
     <Content Include="AdminPaneli\Yetkilendirme.aspx" />
     <Content Include="AdminPaneli\YetkilendirmeDuzenle.aspx" />
@@ -144,6 +149,20 @@
     </Compile>
     <Compile Include="AdminPaneli\Etiketler.aspx.designer.cs">
       <DependentUpon>Etiketler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPaneli\KonuDetay.aspx.cs">
+      <DependentUpon>KonuDetay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPaneli\KonuDetay.aspx.designer.cs">
+      <DependentUpon>KonuDetay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPaneli\KonuIslemleri.aspx.cs">
+      <DependentUpon>KonuIslemleri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPaneli\KonuIslemleri.aspx.designer.cs">
+      <DependentUpon>KonuIslemleri.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPaneli\Uyeler.aspx.cs">
       <DependentUpon>Uyeler.aspx</DependentUpon>

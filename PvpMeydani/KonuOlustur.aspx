@@ -56,6 +56,7 @@
                 <div class="satir" style="text-align:center; margin:40px 0;">
                     <asp:LinkButton ID="lbtn_konuOlustur" runat="server" CssClass="konuOlustur" Text="Oluştur" OnClick="lbtn_konuOlustur_Click"></asp:LinkButton>
                 </div>
+                <asp:label ID="lbl_bilgi" runat="server" Visible="false"></asp:label>
             </div>
         </div>
     </div>

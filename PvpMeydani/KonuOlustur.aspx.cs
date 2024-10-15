@@ -42,7 +42,11 @@ namespace PvpMeydani
                             k.AcilisTarihi = cl_acilisTarihi.SelectedDate;
                             k.ServerDurumu = cb_serverDurumu.Checked;
                             k.Icerik = tb_icerik.Text;
-                            vm.KonuOlustur(k);
+                            if (vm.KonuOlustur(k))
+                            {
+                                lbl_bilgi.Visible = true;
+                                lbl_bilgi.Text = "hata";
+                            }
                         }
                     }
                 }

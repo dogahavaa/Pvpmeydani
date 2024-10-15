@@ -41,7 +41,7 @@
                             Anasayfa
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="KonuIslemleri.aspx">
                         <div class="satir">
                             <img src="Images/Icons/topic.png" class="iconn" />
                             Konu İşlemleri
