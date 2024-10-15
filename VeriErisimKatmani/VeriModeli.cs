@@ -1243,6 +1243,57 @@ namespace VeriErisimKatmani
             }
         }
 
+        public void KonuReddet(int id)
+        {
+            try
+            {
+                cmd.CommandText = "DELETE FROM Konular WHERE ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public Konu KonuGetir(int id)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT Z.Zorluk, T.Tur, U.KullaniciAdi, K.Baslik, K.Icerik, K.ServerAdi, K.Website, K.AcilisTarihi, K.VipKonu, K.Onayli FROM Konular AS K JOIN Turler AS T ON T.ID = K.TurID JOIN Zorluklar AS Z ON Z.ID = K.ZorlukID JOIN Uyeler AS U ON U.ID = K.UyeID WHERE K.ID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                Konu k = new Konu();
+                while (reader.Read())
+                {
+                    k.Zorluk = reader.GetString(0);
+                    k.TurAdi = reader.GetString(1);
+                    k.UyeKullaniciAdi = reader.GetString(2);
+                    k.Baslik = reader.GetString(3);
+                    k.Icerik = reader.GetString(4);
+                    k.ServerAdi = reader.GetString(5);
+                    k.Website = reader.GetString(6);
+                    k.AcilisTarihi = reader.GetDateTime(7);
+                    k.VipKonu = reader.GetBoolean(8);
+                    k.Onayli = reader.GetBoolean(9);
+                }
+                return k;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
         #endregion
+
     }
 }

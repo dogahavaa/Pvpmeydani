@@ -73,6 +73,7 @@
     <Content Include="AdminPaneli\CSS\AdminPaneliCSS.css" />
     <Content Include="AdminPaneli\CSS\EtiketlerCSS.css" />
     <Content Include="AdminPaneli\CSS\GenelCSS.css" />
+    <Content Include="AdminPaneli\CSS\KonuCSS.css" />
     <Content Include="AdminPaneli\CSS\ListelemeCSS.css" />
     <Content Include="AdminPaneli\CSS\YetkilendirmeCSS.css" />
     <Content Include="AdminPaneli\CSS\UyelikCSS.css" />
@@ -107,6 +108,7 @@
     <Content Include="AdminPaneli\Uyeler.aspx" />
     <Content Include="AdminPaneli\Yetkilendirme.aspx" />
     <Content Include="AdminPaneli\YetkilendirmeDuzenle.aspx" />
+    <Content Include="CSS\AnasayfaCSS.css" />
     <Content Include="CSS\GenelCSS.css" />
     <Content Include="CSS\konuOlustur.css" />
     <Content Include="CSS\MasterCSS.css" />

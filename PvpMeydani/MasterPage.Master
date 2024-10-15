@@ -5,6 +5,7 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
         <link href="CSS/MasterCSS.css" rel="stylesheet" />
+        <link href="CSS/GenelCSS.css" rel="stylesheet" />
     </asp:ContentPlaceHolder>
 </head>
 <body>
@@ -31,13 +32,15 @@
                     </asp:Panel>
                 </div>
             </div>
-        </div>
-        <div class="anaTasiyici">
             <div class="arkaPlan">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
+                <div class="footer">Pvp Meydanı <a href="https://github.com/dogahavaa" target="_blank"> Doğa Hava </a></div>
             </div>
+            
+
         </div>
+
     </form>
 </body>
 </html>

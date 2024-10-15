@@ -1,0 +1,62 @@
+﻿.anasayfaFrame {
+    min-height: 800px;
+    margin: 0px auto;
+    padding-top: 20px;
+    width: 80%;
+}
+.altMenu{
+    background-color:#f69e60;
+    height:50px;
+    margin:0 auto;
+    border-radius:1px;
+}
+ul{
+    text-decoration:none;
+}
+    ul li {
+        text-decoration: none;
+        float:left;
+        margin-right:15px;
+        padding:12px;
+        list-style:none;
+    }
+.konuOlusturButon {
+    float: right;
+    margin-top: 6px;
+    margin-right: 20px;
+    padding: 5px;
+    border: 1px solid #b53100;
+    border-radius:2px;
+    color: #b53100;
+}
+.icerikFrame {
+    margin-top: 20px;
+}
+.kategoriBaslik {
+    text-align: center;
+    font-weight: 700;
+    font-size: 16pt;
+    background-color: #f69e60;
+    margin: 0 auto;
+    border-radius: 1px;
+    padding: 10px;
+}
+.kategoriIcerik {
+    background-color: #f5eae1;
+}
+.konu {
+    padding: 10px;
+    width: 98%;
+    border-bottom: 1px solid silver;
+}
+.gosterimSol{
+    float:left;
+    color:#808080;
+}
+.gosterimSol h4{
+    color:black;
+}
+.gosterimSag{
+    float:right;
+    margin-right:75px;
+}

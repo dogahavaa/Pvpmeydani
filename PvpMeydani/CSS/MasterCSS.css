@@ -58,9 +58,21 @@ a {
     text-shadow: 0px 6px 9px rgba(245,109,33,0.64);
 }
 .arkaPlan {
-    min-height: 1500px;
     background-color: #fef3ea;
 }
+.footer {
+    margin-top:50px;
+    padding:15px 0;
+    background: #f5eae1;
+    text-align:center;
+    color:#808080;
+}
+    .footer a {
+        color: #F56D21;
+    }
+    .footer a:hover{
+        text-decoration:underline;
+    }
 
 /*background-color:#eae2db;*/
 

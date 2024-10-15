@@ -42,21 +42,21 @@
                     <br />
                         <asp:Calendar ID="cl_acilisTarihi" runat="server"></asp:Calendar>
                     </div>
-                    <div class="satir" style="margin-top:30px;">
+                    <div class="satir" style="margin-top: 30px;">
                         Server Durumu &nbsp
                     <asp:CheckBox ID="cb_serverDurumu" runat="server" />
                     </div>
-                    
+
                 </div>
-                <div style="clear:both"></div>
-                <div class="satir" style="margin-left:20px;">
+                <div style="clear: both"></div>
+                <div class="satir" style="margin-left: 20px;">
                     İçerik<br />
                     <asp:TextBox ID="tb_icerik" runat="server" CssClass="icerik" TextMode="MultiLine"></asp:TextBox>
                 </div>
-                <div class="satir" style="text-align:center; margin:40px 0;">
+                <div class="satir" style="text-align: center; margin: 40px 0;">
                     <asp:LinkButton ID="lbtn_konuOlustur" runat="server" CssClass="konuOlustur" Text="Oluştur" OnClick="lbtn_konuOlustur_Click"></asp:LinkButton>
                 </div>
-                <asp:label ID="lbl_bilgi" runat="server" Visible="false"></asp:label>
+                <asp:Label ID="lbl_bilgi" runat="server" Visible="false"></asp:Label>
             </div>
         </div>
     </div>

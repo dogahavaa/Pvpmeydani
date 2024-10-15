@@ -47,7 +47,7 @@
                                     <asp:LinkButton ID="lbtn_reddet" runat="server" CssClass="secenekResim" CommandArgument='<%# Eval("ID") %>' CommandName="sil">
                                  <img src="Images/Icons/x.png" style="style="width: 16px; height: 16px;" />
                                     </asp:LinkButton>
-                                    <a href='KonuDetay.aspx?gorevID=<%# Eval("ID") %>" class="secenekResim'>
+                                    <a href='KonuDetay.aspx?gorevID=<%# Eval("ID") %>' class="secenekResim">
                                         <img src="Images/Icons/find.png" style="width: 16px; height: 16px;" />
                                     </a>
                                 </td>
@@ -55,7 +55,7 @@
                         </ItemTemplate>
                     </asp:ListView>
                     <div class="yetkiMesajKutusuKucuk">
-                        <asp:Label ID="lbl_uyeOnayMesaj" runat="server" CssClass="yetkiMesajiKucuk"></asp:Label>
+                        <asp:Label ID="lbl_konuOnayMsg" runat="server" CssClass="yetkiMesajiKucuk"></asp:Label>
                     </div>
                 </div>
             </div>

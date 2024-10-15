@@ -8,7 +8,7 @@
     border: 1px solid silver;
     border-radius: 5px;
     min-height:400px;
-    float:left
+    float:left;
 }
 .konuSolFrame{
     float:left;
@@ -27,15 +27,17 @@
     min-width: 900px;
     max-width: 900px;
     border-radius: 5px;
-    min-height:300px;
-    max-height:300px;
+    min-height: 300px;
+    max-height: 300px;
+    
 }
 .konuOlustur {
     padding: 10px 50px;
     background-color: #F56D21;
-    border-radius:7px;
-    color:white;
-    font-weight:400;
+    border-radius: 7px;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 50px;
 }
 .konuDdl {
     padding: 10px 10px;

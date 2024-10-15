@@ -42,11 +42,33 @@ namespace PvpMeydani.AdminPaneli
                 if (vm.YetkiSorgula(38, y.GorevID))
                 {
                     vm.KonuOnayla(id);
+                    lbl_konuOnayMsg.Visible = false;
+
                     lv_onayBekleyen.DataSource = vm.KonuListele(false);
                     lv_onayBekleyen.DataBind();
-
                     lv_konular.DataSource = vm.KonuListele(true);
                     lv_konular.DataBind();
+                    
+                }
+                else
+                {
+                    lbl_konuOnayMsg.Text = "Konu onaylama yetkiniz yoktur.";
+                    lbl_konuOnayMsg.Visible = true;
+                }
+            }
+            if (e.CommandName == "sil")
+            {
+                if (vm.YetkiSorgula(39, y.GorevID))
+                {
+                    vm.KonuReddet(id);
+                    lbl_konuOnayMsg.Visible = false;
+                    lv_onayBekleyen.DataSource = vm.KonuListele(false);
+                    lv_onayBekleyen.DataBind();
+                }
+                else
+                {
+                    lbl_konuOnayMsg.Text = "Konu onayı reddetme yetkiniz yoktur.";
+                    lbl_konuOnayMsg.Visible = true;
                 }
             }
             

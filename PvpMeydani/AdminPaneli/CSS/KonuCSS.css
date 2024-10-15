@@ -1,0 +1,66 @@
+﻿*, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Poppins;
+    background-color: #ffe8d7;
+    color: #211C19;
+}
+
+a {
+    text-decoration: none;
+}
+
+.cizgi {
+    border-bottom: 1px solid black;
+}
+.satirKonu {
+    margin: 10px;
+    font-weight:bold;
+    font-size:13pt;
+}
+.lblStyle{
+    font-weight:400;
+    font-size:13pt;
+    margin-left:10px;
+}
+.konuSol {
+    float: left;
+    width: 800px;
+}
+.konuSag {
+    float: left;
+    width: 600px;
+    margin-left:20px;
+}
+.tablo {
+    width: 98%;
+    border-left: 1px solid silver;
+    border-right: 1px solid silver;
+    border-top: 1px solid silver;
+}
+    .tablo tr th {
+        padding: 3px 10px;
+        text-align: left;
+        border-bottom: 1px solid silver;
+        border-right: 1px solid silver;
+    }
+    .tablo tr td {
+        padding: 3px 10px;
+        text-align: center;
+        border-bottom: 1px solid silver;
+    }
+.konuButon {
+    padding: 10px 20px;
+    color: white;
+    background-color: #e58c5a;
+    border-radius:5px;
+
+}
+.butonlar{
+    margin-top:30px;
+    margin-bottom:15px;
+    text-align:center;
+}
