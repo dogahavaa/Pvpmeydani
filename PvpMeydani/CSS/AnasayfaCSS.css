@@ -1,14 +1,30 @@
 ﻿.anasayfaFrame {
-    min-height: 800px;
-    margin: 0px auto;
+    min-height: 400px;
     padding-top: 20px;
-    width: 80%;
+    width: 950px;
+    float: left;
+    margin-left: -100px;
+    
 }
-.altMenu{
-    background-color:#f69e60;
-    height:50px;
-    margin:0 auto;
-    border-radius:1px;
+.reklamAlani{
+    float:right;
+    width:150px;
+    height:500px;
+    background-color:black;
+    margin-top:40px;
+    margin-right:50px;
+    writing-mode:vertical-lr;
+    text-orientation:upright;
+    font-size:18pt;
+    color:white;
+    text-align:center;
+    padding-left:100px;
+}
+.altMenu {
+    background-color: #f69e60;
+    height: 50px;
+    /*margin: 0 auto;*/
+    border-radius: 1px;
 }
 ul{
     text-decoration:none;
@@ -31,13 +47,15 @@ ul{
 }
 .icerikFrame {
     margin-top: 20px;
+    -webkit-box-shadow: 0px 9px 19px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 9px 19px -6px rgba(0,0,0,0.75);
+    box-shadow: 0px 9px 19px -6px rgba(0,0,0,0.75);
 }
 .kategoriBaslik {
     text-align: center;
     font-weight: 700;
     font-size: 16pt;
     background-color: #f69e60;
-    margin: 0 auto;
     border-radius: 1px;
     padding: 10px;
 }
@@ -48,6 +66,7 @@ ul{
     padding: 10px;
     width: 98%;
     border-bottom: 1px solid silver;
+    background-color:#f8f3ee;
 }
 .gosterimSol{
     float:left;
@@ -59,4 +78,7 @@ ul{
 .gosterimSag{
     float:right;
     margin-right:75px;
+}
+.konuLink:hover{
+    text-decoration:underline;
 }

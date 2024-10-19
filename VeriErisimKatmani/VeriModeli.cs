@@ -1295,5 +1295,30 @@ namespace VeriErisimKatmani
         }
         #endregion
 
+        #region Yorum İşlemleri
+
+        public void YorumYap(Yorum y)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO Yorumlar(UyeID, KonuID, Icerik, EklemeTarihi, BegeniSayisi, Onayli) VALUES(@uID, @kID, @icerik, @eklemeTarihi, @begeniSayisi, @onayli)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@uID", y.UyeID);
+                cmd.Parameters.AddWithValue("@kID", y.KonuID);
+                cmd.Parameters.AddWithValue("@icerik", y.Icerik);
+                cmd.Parameters.AddWithValue("@eklemeTarihi", y.EklemeTarihi);
+                cmd.Parameters.AddWithValue("@begeniSayisi", y.BegeniSayisi);
+                cmd.Parameters.AddWithValue("@onayli", y.Onayli);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+        #endregion
     }
 }

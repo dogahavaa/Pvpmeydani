@@ -8,7 +8,7 @@ using VeriErisimKatmani;
 
 namespace PvpMeydani
 {
-    public partial class UyeGiris : System.Web.UI.Page
+    public partial class UyeGirisi : System.Web.UI.Page
     {
         VeriModeli vm = new VeriModeli();
         protected void Page_Load(object sender, EventArgs e)
@@ -28,6 +28,12 @@ namespace PvpMeydani
                         Session["uye"] = uye;
                         Response.Redirect("Default.aspx");
                     }
+                    else
+                    {
+                        pnl_basarisizBilgi.Visible = true;
+                        lbl_basarisizMesaj.Visible = true;
+                        lbl_basarisizMesaj.Text = "Kullanıcı bulunamadı.";
+                    }
                 }
                 else
                 {
@@ -44,4 +50,5 @@ namespace PvpMeydani
             }
         }
     }
+
 }

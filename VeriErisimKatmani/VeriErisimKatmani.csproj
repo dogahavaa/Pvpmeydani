@@ -51,6 +51,7 @@
     <Compile Include="VeriModeli.cs" />
     <Compile Include="YetkilendirmeGorevAra.cs" />
     <Compile Include="Yonetici.cs" />
+    <Compile Include="Yorum.cs" />
     <Compile Include="Zorluk.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

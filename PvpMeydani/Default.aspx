@@ -1,20 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PvpMeydani.Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/GenelCSS.css" rel="stylesheet" />
     <link href="CSS/MasterCSS.css" rel="stylesheet" />
     <link href="CSS/AnasayfaCSS.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="anasayfaFrame">
-        <%--<div class="altMenu">
-            <ul>
-                <li>Yeni Konular</li>
-                <li>Yeni Mesajlar</li>
-                <li>Popüler Konular</li>
-            </ul>
-            <asp:LinkButton ID="lbtn_konuOlustur" runat="server" Text="Konu Oluştur" CssClass="konuOlusturButon"></asp:LinkButton>
-        </div>--%>
         <div class="icerikFrame">
             <div class="kategoriBaslik">
                 VIP KONULAR
@@ -24,7 +15,9 @@
                     <ItemTemplate>
                         <div class="konu">
                             <div class="gosterimSol">
-                                <h4><%# Eval("Baslik")%></h4>
+                                <a class="konuLink" href="KonuIcerigi.aspx?konuID=<%# Eval("ID") %>">
+                                    <h4><%# Eval("Baslik")%></h4>
+                                </a>
                                 Yazar : <%# Eval("UyeKullaniciAdi") %> | Tarih : <%# Eval("EklenmeTarihi") %>
                             </div>
                             <div class="gosterimSag">
@@ -48,7 +41,9 @@
                     <ItemTemplate>
                         <div class="konu">
                             <div class="gosterimSol">
-                                <h4><%# Eval("Baslik")%></h4>
+                                <a class="konuLink" href="KonuIcerigi.aspx?konuID=<%# Eval("ID") %>">
+                                    <h4><%# Eval("Baslik")%></h4>
+                                </a>
                                 Yazar : <%# Eval("UyeKullaniciAdi") %> | Tarih : <%# Eval("EklenmeTarihi") %>
                             </div>
                             <div class="gosterimSag">
@@ -62,4 +57,7 @@
             </div>
         </div>
     </div>
+
+    <div class="reklamAlani">REKLAM ALANI</div>
+    <div style="clear:both"></div>
 </asp:Content>

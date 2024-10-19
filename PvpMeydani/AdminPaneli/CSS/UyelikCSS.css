@@ -1,11 +1,5 @@
-﻿*, h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    padding: 0;
-}
-body {
-    font-family: Poppins;
-    background: linear-gradient(to right, #c5443f 30%,#f9bc2a 100%,#f9bc2a 100%);
-    color: #211C19;
+﻿.frame{
+    padding-top:30px;
 }
 .mainFrame {
     border: 1px solid silver;
@@ -13,7 +7,6 @@ body {
     width: 500px;
     min-height: 620px;
     margin: 0 auto;
-    margin-top: 100px;
     background-color: #ffffffd4;
     -webkit-box-shadow: 0px 9px 19px -6px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 9px 19px -6px rgba(0,0,0,0.75);

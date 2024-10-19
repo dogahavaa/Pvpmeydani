@@ -12,7 +12,7 @@ body {
 a {
     text-decoration: none;
 }
-.anaTasiyici{
+.aTasiyici{
     width:1360px;
     margin:0 auto;
 }
@@ -31,7 +31,7 @@ a {
 }
 .uyeIslemleri{
     float:right;
-    margin-right:20px;
+    margin-right:40px;
     margin-top:50px;
     font-size:13pt;
 }
@@ -58,10 +58,12 @@ a {
     text-shadow: 0px 6px 9px rgba(245,109,33,0.64);
 }
 .arkaPlan {
-    background-color: #fef3ea;
+    background-color: #f5eae1;
+/*    width:100%;*/
+    min-height:100px;
 }
 .footer {
-    margin-top:50px;
+    margin-top:30px;
     padding:15px 0;
     background: #f5eae1;
     text-align:center;

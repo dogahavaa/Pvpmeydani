@@ -1,14 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UyeGiris.aspx.cs" Inherits="PvpMeydani.UyeGiris" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Pvp Meydanı - Üye Giriş</title>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="UyeGirisi.aspx.cs" Inherits="PvpMeydani.UyeGirisi" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="CSS/MasterCSS.css" rel="stylesheet" />
     <link href="AdminPaneli/CSS/UyelikCSS.css" rel="stylesheet" />
-</head>
-<body>
-    <form id="form1" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="frame">
         <div class="mainFrame" style="min-height:375px;">
             <div class="baslik">
                 Üye Giriş
@@ -32,6 +28,6 @@
                 </asp:Panel>
             </div>
         </div>
-    </form>
-</body>
-</html>
+
+    </div>
+</asp:Content>

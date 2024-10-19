@@ -1,0 +1,90 @@
+﻿.konuFrame {
+    padding: 20px;
+    width: 1360px;
+    float: left;
+    /*margin-left:-100px;*/
+}
+.konu{
+    min-height:200px;
+}
+.uyeBilgileri {
+    float: left;
+    width: 200px;
+    background-color: #cfcfcf;
+    border: 1px solid silver;
+    height:100%;
+}
+.icerik {
+    float: left;
+    padding: 10px;
+    background-color: #f8f3ee;
+    width: 1080px;
+    /*min-height: 152px;*/
+    min-height:180px;
+}
+.yorumlar{
+    float:left;
+}
+.tablo {
+    width: 100%;
+    border-left: 1px solid silver;
+    border-right: 1px solid silver;
+    border-top: 1px solid silver;
+}
+    .tablo tr td {
+        padding: 3px 10px;
+        text-align: left;
+        border-bottom: 1px solid silver;
+        font-size:10pt
+    }
+    .tablo tr ka {
+        text-align: center;
+    }
+
+.uyeresim {
+    padding:10px 0;
+    width: 60px;
+    height: 60px;
+    margin-left:60px;
+}
+.tarih {
+    float:left;
+    margin-left:20px;
+    color:#808080;
+}
+.begen{
+    float:right;
+    margin-right:30px;
+}
+.yorumYazFrame {
+    padding: 10px;
+    background-color: #f8f3ee;
+    min-height: 152px;
+    width:1200px;
+    margin-left:30px;
+}
+.yorumYazTB{
+    padding:10px;
+    margin-top:20px;
+    margin-bottom:10px;
+    min-width:1000px;
+    max-width:1000px;
+    min-height:150px;
+    max-height:350px;
+    margin-left:90px;
+    border-radius:5px;
+}
+.yorumYazBTN{
+    padding:10px 25px;
+    color:white;
+    background-color:#ff8d3b;
+    border-radius:7px;
+}
+.yorumYazBTN:hover{
+    text-decoration:underline;
+}
+.yetkiMesaji {
+    font-size: 12pt;
+    font-weight: 500;
+    color: #a00000;
+}

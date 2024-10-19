@@ -11,106 +11,88 @@ namespace PvpMeydani
 {
 
 
-    public partial class UyeOl
+    public partial class KonuIcerigi
     {
 
         /// <summary>
-        /// tb_ad control.
+        /// img_uyeresim control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_ad;
+        protected global::System.Web.UI.WebControls.Image img_uyeresim;
 
         /// <summary>
-        /// tb_soyad control.
+        /// lbl_uka control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_soyad;
+        protected global::System.Web.UI.WebControls.Label lbl_uka;
 
         /// <summary>
-        /// tb_kullaniciAdi control.
+        /// lbl_mesajTarihi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_kullaniciAdi;
+        protected global::System.Web.UI.WebControls.Label lbl_mesajTarihi;
 
         /// <summary>
-        /// tb_mail control.
+        /// lbtn_begen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_mail;
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_begen;
 
         /// <summary>
-        /// tb_sifre control.
+        /// pnl_uyeGirisli control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_sifre;
+        protected global::System.Web.UI.WebControls.Panel pnl_uyeGirisli;
 
         /// <summary>
-        /// fu_uyeResim control.
+        /// tb_yorumYaz control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fu_uyeResim;
+        protected global::System.Web.UI.WebControls.TextBox tb_yorumYaz;
 
         /// <summary>
-        /// lbtn_uyeOl control.
+        /// lbtn_gonder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtn_uyeOl;
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_gonder;
 
         /// <summary>
-        /// pnl_basariliBilgi control.
+        /// pnl_misafir control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnl_basariliBilgi;
+        protected global::System.Web.UI.WebControls.Panel pnl_misafir;
 
         /// <summary>
-        /// lbl_mesaj control.
+        /// lbl_yorumIzin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_mesaj;
-
-        /// <summary>
-        /// pnl_basarisizBilgi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnl_basarisizBilgi;
-
-        /// <summary>
-        /// lbl_basarisizMesaj control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_basarisizMesaj;
+        protected global::System.Web.UI.WebControls.Label lbl_yorumIzin;
     }
 }

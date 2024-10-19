@@ -109,17 +109,20 @@
     <Content Include="AdminPaneli\Yetkilendirme.aspx" />
     <Content Include="AdminPaneli\YetkilendirmeDuzenle.aspx" />
     <Content Include="CSS\AnasayfaCSS.css" />
+    <Content Include="CSS\DetayCSS.css" />
     <Content Include="CSS\GenelCSS.css" />
     <Content Include="CSS\konuOlustur.css" />
     <Content Include="CSS\MasterCSS.css" />
     <Content Include="Default.aspx" />
+    <Content Include="KonuIcerigi.aspx" />
     <Content Include="KonuOlustur.aspx" />
+    <Content Include="Resimler\Icons\heart.png" />
     <Content Include="Resimler\metin2-logo.png" />
     <Content Include="Resimler\UyeResimleri\none.png" />
     <Content Include="Resimler\YoneticiResimleri\none.png" />
     <Content Include="AdminPaneli\YoneticiDuzenle.aspx" />
     <Content Include="AdminPaneli\YoneticiIslemleri.aspx" />
-    <Content Include="UyeGiris.aspx" />
+    <Content Include="UyeGirisi.aspx" />
     <Content Include="UyeOl.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -208,6 +211,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="KonuIcerigi.aspx.cs">
+      <DependentUpon>KonuIcerigi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KonuIcerigi.aspx.designer.cs">
+      <DependentUpon>KonuIcerigi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="KonuOlustur.aspx.cs">
       <DependentUpon>KonuOlustur.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -223,12 +233,12 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UyeGiris.aspx.cs">
-      <DependentUpon>UyeGiris.aspx</DependentUpon>
+    <Compile Include="UyeGirisi.aspx.cs">
+      <DependentUpon>UyeGirisi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UyeGiris.aspx.designer.cs">
-      <DependentUpon>UyeGiris.aspx</DependentUpon>
+    <Compile Include="UyeGirisi.aspx.designer.cs">
+      <DependentUpon>UyeGirisi.aspx</DependentUpon>
     </Compile>
     <Compile Include="UyeOl.aspx.cs">
       <DependentUpon>UyeOl.aspx</DependentUpon>

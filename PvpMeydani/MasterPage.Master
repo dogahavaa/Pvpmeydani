@@ -10,7 +10,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="anaTasiyici">
+        <div class="aTasiyici">
             <div class="ustMenu">
                 <div class="logoDiv">
                     <a href="Default.aspx">
@@ -24,10 +24,10 @@
                 <div class="uyeIslemleri">
                     <asp:Panel ID="pnl_uye" runat="server" Visible="false">
                         <asp:HyperLink ID="hl_profileGit" runat="server" CssClass="kullaniciAdi" NavigateUrl="#" Text="kullaniciAdi"></asp:HyperLink>
-                        <asp:LinkButton ID="lbtn_guvenliCikis" runat="server" CssClass="cikis" Text="Güvenli Çıkış"></asp:LinkButton>
+                        <asp:LinkButton ID="lbtn_guvenliCikis" runat="server" CssClass="cikis" Text="Güvenli Çıkış" OnClick="lbtn_guvenliCikis_Click"></asp:LinkButton>
                     </asp:Panel>
                     <asp:Panel ID="pnl_misafir" runat="server" Visible="true">
-                        <a href="UyeGiris.aspx" class="kullaniciAdi">Giriş Yap</a>
+                        <a href="UyeGirisi.aspx" class="kullaniciAdi">Giriş Yap</a>
                         <a href="UyeOl.aspx" class="kullaniciAdi">Üye Ol</a>
                     </asp:Panel>
                 </div>

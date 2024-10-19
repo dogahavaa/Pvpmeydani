@@ -1,14 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UyeOl.aspx.cs" Inherits="PvpMeydani.UyeOl" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Pvp Meydanı - Üye Ol</title>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="UyeOl.aspx.cs" Inherits="PvpMeydani.UyeOl" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="AdminPaneli/CSS/UyelikCSS.css" rel="stylesheet" />
-</head>
-<body>
-    <form id="form1" runat="server">
+    <link href="CSS/MasterCSS.css" rel="stylesheet" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="frame">
         <div class="mainFrame">
             <div class="baslik">
                 Üye Ol
@@ -35,19 +31,20 @@
                     <asp:FileUpload ID="fu_uyeResim" runat="server" />
                 </div>
                 <div class="satir">
-                    <label>Zaten bir hesabın mı var ? <a href="#">Üye Girişi</a></label>
+                    <label>Zaten bir hesabın mı var ? <a href="UyeGirisi.aspx">Üye Girişi</a></label>
                 </div>
                 <div class="satir" style="margin-top:24px;">
                     <asp:LinkButton ID="lbtn_uyeOl" runat="server" Text="Üye Ol" CssClass="uyeOlButon" OnClick="lbtn_uyeOl_Click"></asp:LinkButton>
                 </div>
                 <asp:Panel ID="pnl_basariliBilgi" runat="server" CssClass="satir panel basarili" Visible="false">
-                    <asp:Label ID="lbl_mesaj" runat="server" CssClass="mesaj"><b>Aramıza Hoşgeldin!</b><br />Üyeliğin bir yönetici tarafından onaylanana kadar konu açamazsın ama <a href="#">Buradan</a> giriş yaparak sitemizde dilediğin gibi gezinebilirsin. <br />İyi Forumlar!</asp:Label>
+                    <asp:Label ID="lbl_mesaj" runat="server" CssClass="mesaj"><b>Aramıza Hoşgeldin!</b><br />Üyeliğin bir yönetici tarafından onaylanana kadar konu açamazsın ama <a href="UyeGirisi.aspx">Buradan</a> giriş yaparak sitemizde dilediğin gibi gezinebilirsin. <br />İyi Forumlar!</asp:Label>
                 </asp:Panel>
                 <asp:Panel ID="pnl_basarisizBilgi" runat="server" CssClass="satir panel basarisiz" Visible="false">
                     <asp:Label ID="lbl_basarisizMesaj" runat="server" CssClass="mesaj">asdad</asp:Label>
                 </asp:Panel>
             </div>
         </div>
-    </form>
-</body>
-</html>
+    </div>
+    
+
+</asp:Content>
