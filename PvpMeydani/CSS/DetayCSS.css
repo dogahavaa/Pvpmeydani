@@ -12,7 +12,7 @@
     width: 200px;
     background-color: #cfcfcf;
     border: 1px solid silver;
-    height:100%;
+    min-height:198px;
 }
 .icerik {
     float: left;
@@ -32,7 +32,7 @@
     border-top: 1px solid silver;
 }
     .tablo tr td {
-        padding: 3px 10px;
+        padding: 4px 10px;
         text-align: left;
         border-bottom: 1px solid silver;
         font-size:10pt
@@ -87,4 +87,23 @@
     font-size: 12pt;
     font-weight: 500;
     color: #a00000;
+}
+.yorumlarFrame {
+    padding: 10px;
+    background-color: #f8f3ee;
+    min-height: 152px;
+    width: 1200px;
+    margin-left: 30px;
+}
+.konuBasligi{
+    text-align:center;
+    font-size:18pt;
+    font-weight:600;
+    color:#8f3c00;
+    margin-bottom:20px;
+}
+.aciklamaTablo{
+    width:300px;
+    text-align:left;
+    margin:10px 0;
 }

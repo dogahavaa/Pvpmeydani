@@ -1263,7 +1263,7 @@ namespace VeriErisimKatmani
         {
             try
             {
-                cmd.CommandText = "SELECT Z.Zorluk, T.Tur, U.KullaniciAdi, K.Baslik, K.Icerik, K.ServerAdi, K.Website, K.AcilisTarihi, K.VipKonu, K.Onayli FROM Konular AS K JOIN Turler AS T ON T.ID = K.TurID JOIN Zorluklar AS Z ON Z.ID = K.ZorlukID JOIN Uyeler AS U ON U.ID = K.UyeID WHERE K.ID=@id";
+                cmd.CommandText = "SELECT Z.Zorluk, T.Tur, U.KullaniciAdi, K.Baslik, K.Icerik, K.ServerAdi, K.Website, K.AcilisTarihi, K.VipKonu, K.Onayli, K.TurID, K.ZorlukID, K.UyeID, K.ServerDurumu, K.EklenmeTarihi, K.GuncellenmeTarihi, K.GoruntulemeSayisi, K.BegeniSayisi, K.YorumSayisi, K.SonYorumKAdi, K.SonYorumTarihi, K.ID FROM Konular AS K JOIN Turler AS T ON T.ID = K.TurID  JOIN Zorluklar AS Z ON Z.ID = K.ZorlukID  JOIN Uyeler AS U ON U.ID = K.UyeID WHERE K.ID=@id";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@id", id);
                 con.Open();
@@ -1281,6 +1281,17 @@ namespace VeriErisimKatmani
                     k.AcilisTarihi = reader.GetDateTime(7);
                     k.VipKonu = reader.GetBoolean(8);
                     k.Onayli = reader.GetBoolean(9);
+                    k.TurID = reader.GetInt32(10);
+                    k.ZorlukID = reader.GetInt32(11);
+                    k.UyeID = reader.GetInt32(12);
+                    k.ServerDurumu = reader.GetBoolean(13);
+                    k.EklenmeTarihi = reader.GetDateTime(14);
+                    k.GuncellenmeTarihi = reader.GetDateTime(15);
+                    k.GoruntulemeSayisi = reader.GetInt32(16);
+                    k.BegeniSayisi = reader.GetInt32(17);
+                    k.YorumSayisi = reader.GetInt32(18);
+                    k.SonYorumKAdi = reader.GetString(19);
+                    k.SonYorumTarihi = reader.GetDateTime(20); // Yorum yap metodunda düzenle !!!
                 }
                 return k;
             }
@@ -1297,7 +1308,7 @@ namespace VeriErisimKatmani
 
         #region Yorum İşlemleri
 
-        public void YorumYap(Yorum y)
+        public void YorumYap(Yorum y) // Düzenlenecek
         {
             try
             {
@@ -1318,6 +1329,73 @@ namespace VeriErisimKatmani
             }
         }
 
+        public List<Yorum> YorumListele()
+        {
+            try
+            {
+                cmd.CommandText = "SELECT Y.ID, Y.UyeID, U.KullaniciAdi, Y.Icerik, Y.EklemeTarihi, Y.BegeniSayisi, Y.Onayli, Y.KonuID FROM Yorumlar AS Y JOIN Uyeler AS U ON U.ID = Y.UyeID";
+                cmd.Parameters.Clear();
+                con.Open();
+                List<Yorum> yorumlar = new List<Yorum>();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Yorum y = new Yorum();
+                    y.ID = reader.GetInt32(0);
+                    y.UyeID = reader.GetInt32(1);
+                    y.UyeKullaniciAdi = reader.GetString(2);
+                    y.Icerik = reader.GetString(3);
+                    y.EklemeTarihi = reader.GetDateTime(4);
+                    y.BegeniSayisi = reader.GetInt32(5);
+                    y.Onayli = reader.GetBoolean(6);
+                    y.KonuID = reader.GetInt32(7);
+                    yorumlar.Add(y);
+                }
+                return yorumlar;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public List<Yorum> YorumListele(int konuID)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT Y.ID, Y.UyeID, U.KullaniciAdi, Y.Icerik, Y.EklemeTarihi, Y.BegeniSayisi, Y.Onayli, Y.KonuID FROM Yorumlar AS Y JOIN Uyeler AS U ON U.ID = Y.UyeID WHERE Y.KonuID = @konuID";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@konuID", konuID);
+                con.Open();
+                List<Yorum> yorumlar = new List<Yorum>();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Yorum y = new Yorum();
+                    y.ID = reader.GetInt32(0);
+                    y.UyeID = reader.GetInt32(1);
+                    y.UyeKullaniciAdi = reader.GetString(2);
+                    y.Icerik = reader.GetString(3);
+                    y.EklemeTarihi = reader.GetDateTime(4);
+                    y.BegeniSayisi = reader.GetInt32(5);
+                    y.Onayli = reader.GetBoolean(6);
+                    y.KonuID = reader.GetInt32(7);
+                    yorumlar.Add(y);
+                }
+                return yorumlar;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
         #endregion
     }
