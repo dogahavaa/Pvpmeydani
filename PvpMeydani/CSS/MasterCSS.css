@@ -8,7 +8,6 @@ body {
     background-color: #ffe8d7;
     color: #211C19;
 }
-
 a {
     text-decoration: none;
 }
@@ -76,5 +75,13 @@ a {
         text-decoration:underline;
     }
 
-/*background-color:#eae2db;*/
+.yeniKonu {
+    color: #670000;
+    border: 1px solid #670000;
+    padding:2px 4px;
+}
+    .yeniKonu:hover {
+        background-color: #670000;
+        color:white;
+    }
 

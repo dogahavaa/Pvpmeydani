@@ -13,11 +13,16 @@ namespace PvpMeydani
         VeriModeli vm = new VeriModeli();
         protected void Page_Load(object sender, EventArgs e)
         {
-            rptr_vipIcerik.DataSource = vm.KonuListele(true);
+            rptr_vipIcerik.DataSource = vm.KonuListele(true, true, true);
             rptr_vipIcerik.DataBind();
 
-            rptr_yeniKonular.DataSource = vm.KonuListele(true);
+            rptr_yeniKonular.DataSource = vm.KonuListele(true, false, true);
             rptr_yeniKonular.DataBind();
+        }
+
+        protected void rptr_vipIcerik_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+
         }
     }
 }

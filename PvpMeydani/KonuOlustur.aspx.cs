@@ -13,14 +13,23 @@ namespace PvpMeydani
         VeriModeli vm = new VeriModeli();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            Uye u = (Uye)Session["uye"];
+            if (u != null)
             {
-                ddl_tur.DataSource = vm.TurListele();
-                ddl_tur.DataBind();
+                if (!IsPostBack)
+                {
+                    ddl_tur.DataSource = vm.TurListele();
+                    ddl_tur.DataBind();
 
-                ddl_zorluk.DataSource = vm.ZorlukListele();
-                ddl_zorluk.DataBind();
+                    ddl_zorluk.DataSource = vm.ZorlukListele();
+                    ddl_zorluk.DataBind();
+                }
             }
+            else
+            {
+                Response.Redirect("UyeGirisi.aspx");
+            }
+            
         }
 
         protected void lbtn_konuOlustur_Click(object sender, EventArgs e)
@@ -34,6 +43,7 @@ namespace PvpMeydani
                         if (!string.IsNullOrEmpty(tb_icerik.Text))
                         {
                             Konu k = new Konu();
+                            Uye u = (Uye)Session["uye"];
                             k.Baslik = tb_konuBaslik.Text;
                             k.ServerAdi = tb_serverAdi.Text;
                             k.TurID = Convert.ToInt32(ddl_tur.SelectedItem.Value);
@@ -42,11 +52,21 @@ namespace PvpMeydani
                             k.AcilisTarihi = cl_acilisTarihi.SelectedDate;
                             k.ServerDurumu = cb_serverDurumu.Checked;
                             k.Icerik = tb_icerik.Text;
-                            if (vm.KonuOlustur(k))
+                            k.Durum = true;
+                            if (u.Onayli)
+                            {
+                                if (vm.KonuOlustur(k, u.ID))
+                                {
+                                    lbl_bilgi.Visible = true;
+                                    lbl_bilgi.Text = "Konu başarıyla oluşturulmuştur.";
+                                }
+                            }
+                            else
                             {
                                 lbl_bilgi.Visible = true;
-                                lbl_bilgi.Text = "hata";
+                                lbl_bilgi.Text = "Üyeliğiniz henüz onaylanmamıştır.";
                             }
+                            
                         }
                     }
                 }

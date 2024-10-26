@@ -25,5 +25,11 @@ namespace PvpMeydani
                 Response.Redirect("AdminGiris.aspx");
             }
         }
+
+        protected void lbtn_guvenliCikis_Click(object sender, EventArgs e)
+        {
+            Session["Yonetici"] = null;
+            Response.Redirect("AdminGiris.aspx");
+        }
     }
 }

@@ -27,5 +27,10 @@ namespace PvpMeydani
             Session["uye"] = null;
             Response.Redirect("Default.aspx");
         }
+
+        protected void lbtn_konuEkle_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("KonuOlustur.aspx");
+        }
     }
 }

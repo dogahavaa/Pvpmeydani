@@ -4,15 +4,19 @@
     float: left;
     /*margin-left:-100px;*/
 }
+.yorumFrame {
+    width: 1360px;
+    float: left;
+}
 .konu{
     min-height:200px;
 }
 .uyeBilgileri {
     float: left;
     width: 200px;
-    background-color: #cfcfcf;
-    border: 1px solid silver;
-    min-height:198px;
+    background-color: #f1f1f1;
+    border: 1px solid #f1f1f1;
+    min-height: 198px;
 }
 .icerik {
     float: left;
@@ -106,4 +110,16 @@
     width:300px;
     text-align:left;
     margin:10px 0;
+}
+.icerikYorum {
+    float: left;
+    padding: 10px;
+    background-color: #f8f3ee;
+    width: 1060px;
+    height: 198px;
+}
+.begeniSayisi {
+    color: #ff6a00;
+    float:right;
+    margin-left:5px;
 }

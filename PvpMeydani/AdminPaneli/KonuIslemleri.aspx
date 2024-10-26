@@ -104,7 +104,6 @@
                                     <asp:LinkButton ID="lbtn_vip" runat="server" CssClass="secenekResim" CommandArgument='<%# Eval("ID") %>' CommandName="vip">
                                         <asp:Image ID="img_vip" runat="server" ImageUrl="Images/Icons/vip.png" style="width:16px; height:16px;" />
                                     </asp:LinkButton>
-                                    
                                     <asp:LinkButton ID="lbtn_sil" runat="server" CssClass="secenekResim" CommandArgument='<%# Eval("ID") %>' CommandName="sil">
                                          <img src='Images/Icons/x.png' style="width:16px; height:16px;" />
                                     </asp:LinkButton>

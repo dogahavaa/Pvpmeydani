@@ -51,6 +51,15 @@ namespace PvpMeydani
         protected global::System.Web.UI.WebControls.HyperLink hl_profileGit;
 
         /// <summary>
+        /// lbtn_konuEkle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_konuEkle;
+
+        /// <summary>
         /// lbtn_guvenliCikis control.
         /// </summary>
         /// <remarks>

@@ -11,7 +11,7 @@ namespace PvpMeydani.AdminPaneli
 {
 
 
-    public partial class AdminPaneliDefault
+    public partial class Yorumlar
     {
 
         /// <summary>
@@ -24,40 +24,31 @@ namespace PvpMeydani.AdminPaneli
         protected global::System.Web.UI.WebControls.Panel pnl_yetkili;
 
         /// <summary>
-        /// lbl_konuSayisi control.
+        /// lv_yeniYorumlar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_konuSayisi;
+        protected global::System.Web.UI.WebControls.ListView lv_yeniYorumlar;
 
         /// <summary>
-        /// lbl_yorumSayisi control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_yorumSayisi;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// lbl_uyeSayisi control.
+        /// lv_tumYorumlar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_uyeSayisi;
-
-        /// <summary>
-        /// lv_onayBekleyenKonular control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lv_onayBekleyenKonular;
+        protected global::System.Web.UI.WebControls.ListView lv_tumYorumlar;
 
         /// <summary>
         /// lbl_konuOnayMsg control.
@@ -67,24 +58,6 @@ namespace PvpMeydani.AdminPaneli
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_konuOnayMsg;
-
-        /// <summary>
-        /// lv_onayBekleyenUyeler control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lv_onayBekleyenUyeler;
-
-        /// <summary>
-        /// lbl_uyeOnayMesaj control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_uyeOnayMesaj;
 
         /// <summary>
         /// pnl_yetkisiz control.

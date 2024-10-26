@@ -71,6 +71,7 @@
     <Content Include="AdminPaneli\AdminPaneliDefault.aspx" />
     <Content Include="AdminPaneli\CSS\AdminGirisCSS.css" />
     <Content Include="AdminPaneli\CSS\AdminPaneliCSS.css" />
+    <Content Include="AdminPaneli\CSS\AnasayfaCSS.css" />
     <Content Include="AdminPaneli\CSS\EtiketlerCSS.css" />
     <Content Include="AdminPaneli\CSS\GenelCSS.css" />
     <Content Include="AdminPaneli\CSS\KonuCSS.css" />
@@ -82,6 +83,7 @@
     <Content Include="AdminPaneli\Images\black_background-200x40.png" />
     <Content Include="AdminPaneli\Images\black_background-400x400.png" />
     <Content Include="AdminPaneli\Images\dogahavapff.jpeg" />
+    <Content Include="AdminPaneli\Images\Icons\user-account.png" />
     <Content Include="AdminPaneli\Images\Icons\vip.png" />
     <Content Include="AdminPaneli\Images\Icons\unvip.png" />
     <Content Include="AdminPaneli\Images\Icons\find.png" />
@@ -108,6 +110,7 @@
     <Content Include="AdminPaneli\Uyeler.aspx" />
     <Content Include="AdminPaneli\Yetkilendirme.aspx" />
     <Content Include="AdminPaneli\YetkilendirmeDuzenle.aspx" />
+    <Content Include="AdminPaneli\Yorumlar.aspx" />
     <Content Include="CSS\AnasayfaCSS.css" />
     <Content Include="CSS\DetayCSS.css" />
     <Content Include="CSS\GenelCSS.css" />
@@ -116,6 +119,7 @@
     <Content Include="Default.aspx" />
     <Content Include="KonuIcerigi.aspx" />
     <Content Include="KonuOlustur.aspx" />
+    <Content Include="Resimler\Icons\dislike.png" />
     <Content Include="Resimler\Icons\heart.png" />
     <Content Include="Resimler\metin2-logo.png" />
     <Content Include="Resimler\UyeResimleri\none.png" />
@@ -203,6 +207,13 @@
     </Compile>
     <Compile Include="AdminPaneli\YoneticiIslemleri.aspx.designer.cs">
       <DependentUpon>YoneticiIslemleri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPaneli\Yorumlar.aspx.cs">
+      <DependentUpon>Yorumlar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPaneli\Yorumlar.aspx.designer.cs">
+      <DependentUpon>Yorumlar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

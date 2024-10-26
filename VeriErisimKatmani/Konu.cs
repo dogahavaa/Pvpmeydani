@@ -30,5 +30,6 @@ namespace VeriErisimKatmani
         public bool Onayli { get; set; }
         public DateTime SonYorumTarihi { get; set; }
         public string SonYorumKAdi { get; set; }
+        public bool Durum { get; set; }
     }
 }

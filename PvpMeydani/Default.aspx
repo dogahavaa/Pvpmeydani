@@ -11,7 +11,7 @@
                 VIP KONULAR
             </div>
             <div class="kategoriIcerik">
-                <asp:Repeater ID="rptr_vipIcerik" runat="server">
+                <asp:Repeater ID="rptr_vipIcerik" runat="server" OnItemDataBound="rptr_vipIcerik_ItemDataBound">
                     <ItemTemplate>
                         <div class="konu">
                             <div class="gosterimSol">
@@ -24,14 +24,12 @@
                                 <b>Görüntüleme : </b> <%# Eval("GoruntulemeSayisi") %><br />
                                 <b>Yorum       : </b> <%# Eval("YorumSayisi") %>
                             </div>
-                            
                             <div style="clear:both"></div>
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
         </div>
-
         <div class="icerikFrame">
             <div class="kategoriBaslik">
                 YENİ KONULAR
@@ -57,7 +55,6 @@
             </div>
         </div>
     </div>
-
     <div class="reklamAlani">REKLAM ALANI</div>
     <div style="clear:both"></div>
 </asp:Content>

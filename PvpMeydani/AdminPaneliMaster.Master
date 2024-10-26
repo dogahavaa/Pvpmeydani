@@ -47,7 +47,7 @@
                             Konu İşlemleri
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="Yorumlar.aspx">
                         <div class="satir">
                             <img src="Images/Icons/chat.png" class="iconn" />
                             Yorumlar
@@ -73,16 +73,16 @@
                     </a>
                     <a href="Yetkilendirme.aspx">
                         <div class="satir">
-                            <img src="Images/Icons/insurance.png" class="iconn" />
+                            <img src="Images/Icons/user-account.png" class="iconn" />
                             Yetkilendirme
                         </div>
                     </a>
-                    <a href="#">
+                    <asp:LinkButton ID="lbtn_guvenliCikis" runat="server" Text="Güvenli Çıkış" style="color:white" OnClick="lbtn_guvenliCikis_Click">
                         <div class="satir">
                             <img src="Images/Icons/logout.png" class="iconn" />
                             Güvenli Çıkış
                         </div>
-                    </a>
+                    </asp:LinkButton>
                 </div>
             </div>
             <div class="ustMenu">
